@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 enum  {Move}
 var state = Move
+var interactingWith = null
 
 func _ready() -> void:
 	animation_tree.active = true
@@ -21,9 +22,10 @@ func _physics_process(delta: float) -> void:
 
 	#Interact with something
 	if Input.is_action_just_pressed("interact"):
-		Signals.interact.emit(true)
+		await Signals.objectIDSignal.connect(_object_interacted_with)
+		Signals.interact.emit(true,interactingWith)
 	else:
-		Signals.interact.emit(false)
+		Signals.interact.emit(false,0)
 
 func move_state():
 	
@@ -36,3 +38,6 @@ func move_state():
 		animation_tree.set("parameters/Move/BlendSpace2D/blend_position", input_direction)
 		animation_state.travel("Move")
 	move_and_slide()
+
+func _object_interacted_with(objectID : int):
+	interactingWith = objectID
