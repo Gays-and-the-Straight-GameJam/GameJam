@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dghtbaewdukr4"
-path="res://.godot/imported/Sword_1_Template_Idle_Up-Sheet.png-17d84ae9e17ef3298a62a5f338e9b12c.ctex"
+uid="uid://ngnenepw47x3"
+path="res://.godot/imported/hooded_move_up.png-3435b864c6ecedbc5115fcbf9b77891b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/Player/Sword_1_Template_Idle_Up-Sheet.png"
-dest_files=["res://.godot/imported/Sword_1_Template_Idle_Up-Sheet.png-17d84ae9e17ef3298a62a5f338e9b12c.ctex"]
+source_file="res://Assets/Character/Player/hooded_move_up.png"
+dest_files=["res://.godot/imported/hooded_move_up.png-3435b864c6ecedbc5115fcbf9b77891b.ctex"]
 
 [params]
 
