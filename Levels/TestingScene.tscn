@@ -11,3 +11,6 @@ position = Vector2(101, 37)
 
 [node name="TestProp" parent="." instance=ExtResource("2_t4dyv")]
 position = Vector2(101, 1)
+
+[node name="TestProp2" parent="." instance=ExtResource("2_t4dyv")]
+position = Vector2(24, 1)
