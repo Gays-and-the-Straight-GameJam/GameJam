@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://capx4o1nipjod"
-path="res://.godot/imported/Sword_1_Template_Idle_Right-Sheet.png-dfca8c405db04376624af7e7fac93e98.ctex"
+uid="uid://deanppofv4vs4"
+path="res://.godot/imported/hooded_idle_left.png-b84aaedee7d584844480a719ad62170c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/Player/Sword_1_Template_Idle_Right-Sheet.png"
-dest_files=["res://.godot/imported/Sword_1_Template_Idle_Right-Sheet.png-dfca8c405db04376624af7e7fac93e98.ctex"]
+source_file="res://Assets/Character/Player/hooded_idle_left.png"
+dest_files=["res://.godot/imported/hooded_idle_left.png-b84aaedee7d584844480a719ad62170c.ctex"]
 
 [params]
 
