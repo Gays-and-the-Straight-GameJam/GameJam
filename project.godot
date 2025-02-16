@@ -11,8 +11,23 @@ config_version=5
 [application]
 
 config/name="GameJam"
+run/main_scene="res://Levels/TestingScene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
+Signals="*res://Globals/Signals.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/signal_lens/plugin.cfg")
+
+[global_group]
+
+Player=""
+Interactables=""
 
 [input]
 
