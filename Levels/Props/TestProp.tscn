@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbv4rjknmbvaf"]
+
+[ext_resource type="Texture2D" uid="uid://d03o5sad40ye0" path="res://Assets/Props/Cursed_Chest_Idle.png" id="1_2btxe"]
+[ext_resource type="Script" path="res://Levels/Props/test_prop.gd" id="1_kxg1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3ugv"]
+size = Vector2(14, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3gmp"]
+size = Vector2(34, 33)
+
+[node name="TestProp" type="CharacterBody2D" groups=["Interactables"]]
+script = ExtResource("1_kxg1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2btxe")
+hframes = 6
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_x3ugv")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="Detection" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_l3gmp")

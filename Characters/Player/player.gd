@@ -3,11 +3,14 @@ extends CharacterBody2D
 @export var speed = 200
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
+@onready var playerID = self.get_instance_id()
 
 enum  {Move}
 var state = Move
+
 func _ready() -> void:
 	animation_tree.active = true
+	Signals.playerIDSignal.emit(playerID)
 	
 func _physics_process(delta: float) -> void:
 	
@@ -16,6 +19,11 @@ func _physics_process(delta: float) -> void:
 		Move:
 			move_state()
 
+	#Interact with something
+	if Input.is_action_just_pressed("interact"):
+		Signals.interact.emit(true)
+	else:
+		Signals.interact.emit(false)
 
 func move_state():
 	

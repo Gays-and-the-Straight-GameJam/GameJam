@@ -755,7 +755,8 @@ states/Move/position = Vector2(513, 100)
 states/Start/position = Vector2(202, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sfdab"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_5jccw"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_a76sm")]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_rjiuo")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]

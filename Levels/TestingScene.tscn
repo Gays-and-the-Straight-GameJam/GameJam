@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ppyuekhog4l"]
+
+[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
+[ext_resource type="PackedScene" uid="uid://cbv4rjknmbvaf" path="res://Levels/Props/TestProp.tscn" id="2_t4dyv"]
+
+[node name="TestingScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_sktmd")]
+top_level = true
+position = Vector2(101, 37)
+
+[node name="TestProp" parent="." instance=ExtResource("2_t4dyv")]
+position = Vector2(101, 1)
