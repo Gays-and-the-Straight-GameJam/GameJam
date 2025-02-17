@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
 Signals="*res://Globals/Signals.gd"
+SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
 
 [editor_plugins]
 
