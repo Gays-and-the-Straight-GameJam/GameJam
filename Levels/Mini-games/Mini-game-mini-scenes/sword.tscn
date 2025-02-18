@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4gt8utdnaowo"]
+
+[ext_resource type="Texture2D" uid="uid://domfdxbwmje8n" path="res://Levels/Props/Icons/icon_sword.png" id="1_i2f1f"]
+
+[node name="Sword" type="Sprite2D"]
+top_level = true
+texture = ExtResource("1_i2f1f")

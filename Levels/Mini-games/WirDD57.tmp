@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cckje43yscnnn"]
+
+[ext_resource type="Script" path="res://Levels/Mini-games/wire_mini_game.gd" id="1_76dv2"]
+
+[node name="WireMiniGame" type="Node2D"]
+script = ExtResource("1_76dv2")
+
+[node name="popupWindow" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+disable_3d = true
+initial_position = 1
+size = Vector2i(400, 450)
+visible = true
+
+[node name="pointOne" type="Node2D" parent="popupWindow"]
+unique_name_in_owner = true
+position = Vector2(400, 200)
+
+[node name="pointTwo" type="Node2D" parent="popupWindow"]
+unique_name_in_owner = true
+position = Vector2(400, 300)
+
+[node name="pointThree" type="Node2D" parent="popupWindow"]
+unique_name_in_owner = true
+position = Vector2(400, 400)
+
+[node name="pointFour" type="Node2D" parent="popupWindow"]
+unique_name_in_owner = true
+position = Vector2(750, 200)
+
+[node name="pointFive" type="Node2D" parent="popupWindow"]
+unique_name_in_owner = true
+position = Vector2(750, 300)
+
+[node name="pointSix" type="Node2D" parent="popupWindow"]
+unique_name_in_owner = true
+position = Vector2(750, 400)
