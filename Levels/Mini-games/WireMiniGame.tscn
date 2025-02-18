@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://b45kxhhxicecv"]
+
+[ext_resource type="Script" path="res://Levels/Mini-games/wire_mini_game.gd" id="1_nllgb"]
+
+[node name="WireMiniGame" type="Popup"]
+disable_3d = true
+initial_position = 1
+size = Vector2i(400, 450)
+visible = true
+borderless = false
+always_on_top = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nllgb")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+unique_name_in_owner = true
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(400, 450)
+size_2d_override = Vector2i(400, 450)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport"]
+self_modulate = Color(0.533037, 0.533037, 0.533037, 1)
+clip_children = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988082, 0.58532, 0.464827, 1)
+
+[node name="pointOne" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(350, 200)
+
+[node name="pointTwo" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(350, 300)
+
+[node name="pointThree" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(350, 400)
+
+[node name="pointFour" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(675, 200)
+
+[node name="pointFive" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(675, 300)
+
+[node name="pointSix" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(675, 400)
+
+[node name="starWire" type="Line2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+width = 8.0
+
+[node name="swordWire" type="Line2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+width = 8.0
+
+[node name="cannonWire" type="Line2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+width = 8.0
+
+[connection signal="popup_hide" from="." to="SubViewportContainer" method="_on_wire_mini_game_popup_hide"]
