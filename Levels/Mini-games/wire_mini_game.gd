@@ -95,11 +95,11 @@ func _physics_process(delta: float) -> void:
 				print("Connected Reverse")
 	
 	if starSolved && swordSolved && cannonSolved:
-		Signals.wireGameCompleted.emit(true)
-		Signals.inMiniGame.emit(false)
+		GlobalSignals.wireGameCompleted.emit(true)
+		GlobalSignals.inMiniGame.emit(false)
 		parent.solved = true
 		queue_free()
 
 
 func _on_wire_mini_game_popup_hide() -> void:
-	Signals.inMiniGame.emit(false)
+	GlobalSignals.inMiniGame.emit(false)

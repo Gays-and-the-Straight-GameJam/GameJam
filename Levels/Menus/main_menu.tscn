@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://djbelwxotvugp"]
+
+[ext_resource type="Script" path="res://Levels/Menus/main_menu.gd" id="1_acbk6"]
+[ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_twklm"]
+
+[sub_resource type="Theme" id="Theme_47o8f"]
+
+[sub_resource type="Theme" id="Theme_wmx7d"]
+
+[sub_resource type="Theme" id="Theme_h84pk"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_acbk6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -60.0
+offset_right = 137.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Options")
+theme = SubResource("Theme_47o8f")
+theme_override_fonts/font = ExtResource("2_twklm")
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Quit")
+theme = SubResource("Theme_wmx7d")
+theme_override_fonts/font = ExtResource("2_twklm")
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Start")
+theme = SubResource("Theme_h84pk")
+theme_override_fonts/font = ExtResource("2_twklm")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

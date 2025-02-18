@@ -8,7 +8,7 @@ extends Node
 @onready var levelStarted = false
 
 func _ready() -> void:
-	Signals.connect("wireGameCompleted", _on_wire_game_completed)
+	GlobalSignals.connect("wireGameCompleted", _on_wire_game_completed)
 
 func _physics_process(delta: float) -> void:
 	
