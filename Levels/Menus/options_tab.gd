@@ -4,11 +4,13 @@ extends Control
 @onready var Fullscreen_btn = $TabContainer/Graphics/MarginContainer/VBoxContainer/Fullscreen_btn
 @onready var WindowSize_btn = $TabContainer/Graphics/MarginContainer/VBoxContainer/WindowSize_btn
 @onready var VSync_btn = $TabContainer/Graphics/MarginContainer/VBoxContainer/Vsync_btn
+@export var Main_Menu : String = "res://Levels/Menus/main_menu.tscn"
+@onready var exit = get_node("%Exit")
 
-var options
 
 func _ready() -> void:
 	Save.load_settings()  # Load settings from file
+	exit.connect("pressed", _on_exit_pressed)
 
 	# **Fullscreen Toggle**
 	Fullscreen_btn.set_pressed_no_signal(Save.config.get_value("video", "fullscreen", false))
@@ -57,7 +59,7 @@ func _on_fullscreen_btn_toggled(toggled_on: bool) -> void:
 	Save.resize_window()
 
 # Keybinds
-@onready var input_button_scene = preload("res://Levels/Main Menu/input_settings.tscn")
+@onready var input_button_scene = preload("res://Levels/Menus/input_settings.tscn")
 @onready var action_list = $TabContainer/Controls/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 
 var is_remapping = false
@@ -70,6 +72,7 @@ var input_actions = {
 	"move_left": "Move Left",
 	"move_right": "Move Right",
 	"interact": "Interact",
+	"select": "Select"
 }
 
 func _create_action_list():
@@ -128,3 +131,6 @@ func _on_reset_pressed() -> void:
 		if events.size() > 0:
 			Save.save_keybinding(action, events[0])
 	_create_action_list()
+	
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file(Main_Menu)

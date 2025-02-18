@@ -13,9 +13,9 @@ var state = Move
 
 func _ready() -> void:
 	animation_tree.active = true
-	Signals.playerIDSignal.emit(playerID)
-	Signals.objectIDSignal.connect(_object_interacted_with)
-	Signals.inMiniGame.connect(_in_mini_game)
+	GlobalSignals.playerIDSignal.emit(playerID)
+	GlobalSignals.objectIDSignal.connect(_object_interacted_with)
+	GlobalSignals.inMiniGame.connect(_in_mini_game)
 	
 func _physics_process(delta: float) -> void:
 	
@@ -26,9 +26,9 @@ func _physics_process(delta: float) -> void:
 
 	#Interact with something
 	if Input.is_action_just_pressed("interact") and !inMiniGame:
-		Signals.interact.emit(true,interactingWith)
+		GlobalSignals.interact.emit(true,interactingWith)
 	else:
-		Signals.interact.emit(false,0)
+		GlobalSignals.interact.emit(false,0)
 
 func move_state():
 	

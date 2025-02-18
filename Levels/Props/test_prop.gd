@@ -16,7 +16,7 @@ func _ready() -> void:
 	# Signal connections
 	detectionArea.connect("body_entered",_on_body_entered)
 	detectionArea.connect("body_exited",_on_body_exited)
-	Signals.interact.connect(_on_interact)
+	GlobalSignals.interact.connect(_on_interact)
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -28,12 +28,12 @@ func _on_interact(state : bool, objectId : int):
 		print("Interacted with: " + str(self.objectID))
 		var wireGameInstance = wireMiniGame.instantiate()
 		self.add_child(wireGameInstance)
-		Signals.inMiniGame.emit(true)
+		GlobalSignals.inMiniGame.emit(true)
 		
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		entered = true
-		Signals.objectIDSignal.emit(self.objectID)
+		GlobalSignals.objectIDSignal.emit(self.objectID)
 
 func _on_body_exited(body: Node2D):
 	if body.is_in_group("Player"):

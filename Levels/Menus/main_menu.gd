@@ -4,9 +4,8 @@ extends Control
 @onready var start = $VBoxContainer/Start as Button
 @onready var Options = $VBoxContainer/Options as Button
 @onready var Quit = $VBoxContainer/Quit as Button
-@export var Options_tab : String = "res://Levels/Main Menu/options_tab.tscn"
+@export var Options_menu : String = "res://Levels/Menus/options_tab.tscn"
 @export var level_1 : String = "res://Levels/TestingScene.tscn"
-@export var Options_menu : String = "res://Levels/Main Menu/options_menu.tscn"
 
 
 func _ready() -> void:
