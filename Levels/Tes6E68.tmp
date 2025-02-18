@@ -15,10 +15,10 @@ position = Vector2(101, 37)
 position = Vector2(101, 1)
 
 [node name="TestProp2" parent="." instance=ExtResource("2_t4dyv")]
-position = Vector2(24, 1)
+position = Vector2(30, -40)
 
 [node name="Captain" parent="." instance=ExtResource("3_e15ys")]
-position = Vector2(62, -2)
+position = Vector2(33, 74)
 
 [node name="Intern" parent="." instance=ExtResource("4_cp4al")]
 position = Vector2(136, -1)
