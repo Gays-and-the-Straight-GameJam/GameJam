@@ -31,7 +31,8 @@ func _physics_process(delta: float) -> void:
 		
 	if levelComplete == true:
 		level += 1
-	pass
+		levelComplete = false
+		levelStarted = false
 
 # Game complete functions
 func _on_wire_game_completed(state : bool):
