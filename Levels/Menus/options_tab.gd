@@ -134,3 +134,15 @@ func _on_reset_pressed() -> void:
 	
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file(Main_Menu)
+
+
+func _on_fullscreen_btn_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_window_size_btn_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
+
+
+func _on_vsync_btn_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
