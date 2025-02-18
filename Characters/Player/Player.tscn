@@ -822,6 +822,9 @@ shape = SubResource("CircleShape2D_sdcn2")
 sprite_frames = SubResource("SpriteFrames_vukhw")
 animation = &"idle_up"
 
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(2, 23.3333)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5dro7")

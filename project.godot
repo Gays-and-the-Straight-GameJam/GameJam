@@ -18,11 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 Signals="*res://Globals/Signals.gd"
-SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
+Save="*res://Globals/save.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/signal_lens/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 

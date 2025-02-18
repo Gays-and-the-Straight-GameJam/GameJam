@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://blmpuehe0y7jn"]
+
+[ext_resource type="PackedScene" uid="uid://deaixlobxpe2i" path="res://Levels/Main Menu/options_tab.tscn" id="1_cijmy"]
+[ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="1_uupy6"]
+
+[sub_resource type="GDScript" id="GDScript_nf127"]
+script/source = "
+extends Control
+
+@export var Main_Menu : String = \"res://Levels/Main Menu/main_menu.tscn\"
+
+
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file(Main_Menu)
+"
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_nf127")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 54.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="OptionsTab" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_cijmy")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(130, 90)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_uupy6")
+theme_override_font_sizes/font_size = 35
+text = "Exit"
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
