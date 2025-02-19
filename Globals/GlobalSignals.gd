@@ -11,3 +11,5 @@ signal inMiniGame(state)
 signal clicked(state)
 
 signal wireGameCompleted(state)
+
+signal MainMenu(state)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://beheryb2ty7q4"]
+[gd_scene load_steps=5 format=3 uid="uid://beheryb2ty7q4"]
 
 [ext_resource type="Texture2D" uid="uid://dn6scn3afwgau" path="res://Assets/Props/Fusebox.png" id="1_26ygo"]
+[ext_resource type="Script" path="res://Levels/Props/fuse_prop.gd" id="1_n0wte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3xop"]
 size = Vector2(10, 3.5)
@@ -8,12 +9,13 @@ size = Vector2(10, 3.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7m4b"]
 size = Vector2(15, 28)
 
-[node name="FuseProp" type="CharacterBody2D"]
+[node name="FuseProp" type="CharacterBody2D" groups=["Interactables"]]
+script = ExtResource("1_n0wte")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_26ygo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hit box" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.75)
 shape = SubResource("RectangleShape2D_h3xop")
 
