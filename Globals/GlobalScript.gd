@@ -6,13 +6,18 @@ extends Node
 @onready var levelComplete = false
 @onready var introComplete = true
 @onready var levelStarted = false
+@onready var mainMenu = true
+
+# Preload props so they can be instantiated later
+@onready var fuseProp = preload("res://Levels/Props/fuseProp.tscn")
+var prop_picker = [1,2,3]
 
 func _ready() -> void:
 	GlobalSignals.connect("wireGameCompleted", _on_wire_game_completed)
 
 func _physics_process(delta: float) -> void:
 	
-	if levelStarted == false:
+	if levelStarted == false and levelComplete == false:
 		match level:
 			0:
 				numPuzzlesLeft = 0
@@ -31,9 +36,14 @@ func _physics_process(delta: float) -> void:
 		
 	if levelComplete == true:
 		level += 1
-	pass
+		levelComplete = false
+		levelStarted = false
 
 # Game complete functions
 func _on_wire_game_completed(state : bool):
 	numPuzzlesLeft -= 1
 	print("Wire Game completed successfully")
+
+func _start_level_one():
+	pass
+	

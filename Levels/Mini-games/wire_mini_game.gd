@@ -98,8 +98,10 @@ func _physics_process(delta: float) -> void:
 		GlobalSignals.wireGameCompleted.emit(true)
 		GlobalSignals.inMiniGame.emit(false)
 		parent.solved = true
-		queue_free()
+		rootNode.queue_free()
 
 
 func _on_wire_mini_game_popup_hide() -> void:
+	clicks = []
 	GlobalSignals.inMiniGame.emit(false)
+	rootNode.queue_free()
