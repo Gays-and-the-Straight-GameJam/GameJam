@@ -1,24 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4ppyuekhog4l"]
+[gd_scene load_steps=3 format=3 uid="uid://c4ppyuekhog4l"]
 
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
-[ext_resource type="PackedScene" uid="uid://cbv4rjknmbvaf" path="res://Levels/Props/TestProp.tscn" id="2_t4dyv"]
-[ext_resource type="PackedScene" uid="uid://c8e64nrrixv3k" path="res://Characters/Captain/Captain.tscn" id="3_e15ys"]
-[ext_resource type="PackedScene" uid="uid://qajrn5gqgvvs" path="res://Characters/Intern/Intern.tscn" id="4_cp4al"]
+[ext_resource type="PackedScene" uid="uid://beheryb2ty7q4" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
 
-[node name="TestingScene" type="Node2D"]
+[node name="TestingScene" type="Node2D" groups=["Level"]]
 
 [node name="Player" parent="." instance=ExtResource("1_sktmd")]
 top_level = true
 position = Vector2(101, 37)
 
-[node name="TestProp" parent="." instance=ExtResource("2_t4dyv")]
-position = Vector2(101, 1)
-
-[node name="TestProp2" parent="." instance=ExtResource("2_t4dyv")]
-position = Vector2(24, 1)
-
-[node name="Captain" parent="." instance=ExtResource("3_e15ys")]
-position = Vector2(62, -2)
-
-[node name="Intern" parent="." instance=ExtResource("4_cp4al")]
-position = Vector2(136, -1)
+[node name="FuseProp" parent="." instance=ExtResource("3_n7per")]
+position = Vector2(172.549, 11.6159)

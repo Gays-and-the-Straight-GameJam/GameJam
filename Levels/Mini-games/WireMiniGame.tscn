@@ -11,6 +11,8 @@ borderless = false
 always_on_top = true
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+top_level = true
+clip_children = 2
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_nllgb")
@@ -35,27 +37,27 @@ color = Color(0.988082, 0.58532, 0.464827, 1)
 
 [node name="pointOne" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-position = Vector2(350, 200)
+position = Vector2(800, 400)
 
 [node name="pointTwo" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-position = Vector2(350, 300)
+position = Vector2(800, 500)
 
 [node name="pointThree" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-position = Vector2(350, 400)
+position = Vector2(800, 600)
 
 [node name="pointFour" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-position = Vector2(675, 200)
+position = Vector2(1115, 400)
 
 [node name="pointFive" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-position = Vector2(675, 300)
+position = Vector2(1115, 500)
 
 [node name="pointSix" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-position = Vector2(675, 400)
+position = Vector2(1115, 600)
 
 [node name="starWire" type="Line2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true

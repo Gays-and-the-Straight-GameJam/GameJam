@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 			move_state()
 
 	#Interact with something
-	if Input.is_action_just_pressed("interact") and !inMiniGame:
+	if Input.is_action_just_pressed("interact") and inMiniGame == false:
 		GlobalSignals.interact.emit(true,interactingWith)
 	else:
 		GlobalSignals.interact.emit(false,0)
