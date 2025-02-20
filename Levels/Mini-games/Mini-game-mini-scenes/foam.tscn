@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://btwyrhhfo2mql"]
+
+[ext_resource type="Texture2D" uid="uid://e8l5ckqhpr3h" path="res://Assets/Props/Foam.png" id="1_22ce5"]
+
+[node name="Foam" type="Sprite2D"]
+top_level = true
+texture = ExtResource("1_22ce5")

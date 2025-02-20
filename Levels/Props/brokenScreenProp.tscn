@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba2kkar76xg84"]
+
+[ext_resource type="Script" path="res://Levels/Props/broken_screen_prop.gd" id="1_8jw5v"]
+[ext_resource type="Texture2D" uid="uid://doqindkqeossx" path="res://Assets/Props/ScreenBroken.png" id="1_sao5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f85oe"]
+size = Vector2(20, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7n5c"]
+size = Vector2(32, 21)
+
+[node name="BrokenScreenProp" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_8jw5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sao5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_f85oe")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_b7n5c")
