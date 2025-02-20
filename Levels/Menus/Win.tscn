@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5fj14oxeq08u"]
+
+[ext_resource type="Script" path="res://Win.gd" id="1_56yu0"]
+[ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_xdcwl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_56yu0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -43.0
+offset_right = 165.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main_menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xdcwl")
+theme_override_font_sizes/font_size = 32
+text = "Return to main menu"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="Exit_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xdcwl")
+theme_override_font_sizes/font_size = 32
+text = "Exit Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -264.0
+offset_top = 225.0
+offset_right = 264.0
+offset_bottom = 285.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xdcwl")
+theme_override_font_sizes/font_size = 50
+text = "You've beaten all our current levels!
+Give yourself a pat on the back! YAY"
+
+[connection signal="pressed" from="VBoxContainer/Main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit_btn" to="." method="_on_exit_btn_pressed"]

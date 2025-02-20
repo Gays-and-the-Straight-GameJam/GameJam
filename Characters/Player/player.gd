@@ -7,6 +7,16 @@ extends CharacterBody2D
 @onready var interactingWith = 0
 @onready var inMiniGame = false
 @onready var batteries = 0
+@onready var level_timer: Timer = $"Level Timer"
+@onready var timer_label: Label = $CanvasLayer/TimerLabel
+
+var current_level: int = 1
+
+var level_time_limits = {
+	1: 60,
+	2: 180,
+	3: 360
+}
 
 enum  {Move}
 var state = Move
@@ -14,6 +24,7 @@ var state = Move
 
 func _ready() -> void:
 	animation_tree.active = true
+	update_timer_for_level()
 	GlobalSignals.playerIDSignal.emit(playerID)
 	GlobalSignals.objectIDSignal.connect(_object_interacted_with)
 	GlobalSignals.inMiniGame.connect(_in_mini_game)
@@ -59,3 +70,29 @@ func _on_battery_pickup(state : bool):
 	if state == true:
 		self.batteries += 1
 		GlobalSignals.batteryPickedUp.emit(false)
+
+func _process(delta):
+	timer_label.text = format_time(level_timer.time_left)
+
+func format_time(seconds: float) -> String:
+	var minutes = int(seconds) / 60
+	var secs = int(seconds) % 60
+	return "Time Left: %02d:%02d" % [minutes, secs]
+
+func start_level_timer():
+	if current_level in level_time_limits:
+		level_timer.wait_time = level_time_limits[current_level]
+		level_timer.start()
+
+func _on_level_timer_timeout():
+	timer_label.text = "00:00"
+	print("Time is up! Loading Game Over screen...")
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://Levels/Menus/OOT.tscn")
+	
+func update_timer_for_level():
+	if level_timer:
+		level_timer.stop()
+		level_timer.wait_time = GlobalScript.get_time_for_level()
+		level_timer.start()
+		print("Timer set to:", level_timer.wait_time, "seconds for Level", GlobalScript.level)

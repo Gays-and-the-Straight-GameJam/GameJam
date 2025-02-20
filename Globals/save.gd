@@ -21,8 +21,10 @@ var v_sync_list = [
 
 func _ready() -> void:
 	load_settings()  
+	
 
-# 
+
+
 func save_setting(section: String, key: String, value):
 	config.set_value(section, key, value)
 	config.save(SAVEFILE)
@@ -37,7 +39,15 @@ func load_settings():
 		config.set_value("video", "v_sync", DisplayServer.VSYNC_ENABLED)
 		config.set_value("video", "window_width", 1920)
 		config.set_value("video", "window_height", 1080)
+		
+		config.set_value("audio", "master_volume", 1.0)
+		config.set_value("audio", "music_volume", 1.0)
+		config.set_value("audio", "sfx_volume", 1.0)
+		
 		config.save(SAVEFILE)
+		
+	apply_audio_settings()
+
 
 
 func set_resolution(index: int):
@@ -117,4 +127,23 @@ func load_keybinding():
 
 			keybindings[key] = input_event
 	return keybindings
+
+func save_audio_settings(key: String, value):
+	config.set_value("audio", key, value)
+	config.save(SAVEFILE)
 	
+func load_audio_settings():
+	var audio_settings = {}
+	for key in config.get_section_keys("audio"):
+		audio_settings[key] = config.get_value("audio", key)
+	return audio_settings
+	
+func apply_audio_settings():
+	var master_vol = config.get_value("audio", "master_volume", 1.0)
+	var music_vol = config.get_value("audio", "music_volume", 1.0)
+	var sfx_vol = config.get_value("audio", "sfx_volume", 1.0)
+
+	
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(master_vol))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_vol))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sfx"), linear_to_db(sfx_vol))
