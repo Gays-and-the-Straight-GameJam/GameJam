@@ -14,15 +14,16 @@ signal wireGameCompleted(state)
 
 signal batteryGameCompleted(state)
 
-signal MainMenu(state)
+signal screenGameCompleted(state)
 
+signal DragNDropCompleted(state)
+
+signal MainMenu(state)
 
 signal batteryPickedUp(state)
 
 signal batteryCount(num)
 
 signal LevelComplete()
-
-signal DragNDropCompleted(state)
 
 signal droppped(object: Node2D, hole: Area2D)

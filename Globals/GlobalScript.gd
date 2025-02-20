@@ -21,6 +21,7 @@ func _ready() -> void:
 	GlobalSignals.connect("DragNDropCompleted", _on_drag_game_completed)
 	GlobalSignals.connect("wireGameCompleted", _on_wire_game_completed)
 	GlobalSignals.connect("batteryGameCompleted", _on_battery_game_completed)
+	GlobalSignals.connect("screenGameCompleted",_on_screen_game_completed)
 
 func _physics_process(delta: float) -> void:
 	
@@ -59,6 +60,10 @@ func _on_battery_game_completed(state : bool):
 func _on_drag_game_completed(state : bool):
 	numPuzzlesLeft -= 1
 	print("DragNDrop Game completed successfully")
+
+func _on_screen_game_completed(state : bool):
+	numPuzzlesLeft -= 1
+	print("Screen Game completed successfully")
 
 func _start_level_one():
 	pass

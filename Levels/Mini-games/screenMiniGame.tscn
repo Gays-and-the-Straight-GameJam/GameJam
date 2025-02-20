@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://sm3vqxjkbhtp"]
+
+[ext_resource type="Script" path="res://Levels/Mini-games/screen_mini_game.gd" id="1_24r4o"]
+[ext_resource type="Texture2D" uid="uid://ruibiya8ehoq" path="res://Assets/Props/Cracked_screen.png" id="2_3u07j"]
+
+[node name="ScreenMiniGame" type="Popup"]
+disable_3d = true
+initial_position = 1
+size = Vector2i(310, 180)
+visible = true
+borderless = false
+always_on_top = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_24r4o")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(310, 180)
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+offset_right = 310.0
+offset_bottom = 180.0
+texture = ExtResource("2_3u07j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
