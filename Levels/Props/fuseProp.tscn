@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://84ovqkp3d0mn"]
+[gd_scene load_steps=5 format=3 uid="uid://beheryb2ty7q4"]
 
 [ext_resource type="Texture2D" uid="uid://dn6scn3afwgau" path="res://Assets/Props/Fusebox.png" id="1_26ygo"]
 [ext_resource type="Script" path="res://Levels/Props/fuse_prop.gd" id="1_n0wte"]

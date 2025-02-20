@@ -21,8 +21,8 @@ func _ready() -> void:
 	if playerNode.batteries != 0:
 		batterySpawn.add_child(battery)
 		battery.position = batterySpawn.position
-		batterySlot.add_child(batteryslotEmpty)
-		batteryslotEmpty.position = batterySlot.position
+	batterySlot.add_child(batteryslotEmpty)
+	batteryslotEmpty.position = batterySlot.position
 
 func _physics_process(delta: float) -> void:
 		
