@@ -4,6 +4,9 @@ extends Control
 @onready var Fullscreen_btn = $TabContainer/Graphics/MarginContainer/VBoxContainer/Fullscreen_btn
 @onready var WindowSize_btn = $TabContainer/Graphics/MarginContainer/VBoxContainer/WindowSize_btn
 @onready var VSync_btn = $TabContainer/Graphics/MarginContainer/VBoxContainer/Vsync_btn
+@onready var master_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/MasterVolume_btn
+@onready var music_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/Music_btn
+@onready var sfx_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/Sfx_btn
 @export var Main_Menu : String = "res://Levels/Menus/main_menu.tscn"
 @onready var exit = get_node("%Exit")
 
@@ -11,6 +14,11 @@ extends Control
 func _ready() -> void:
 	Save.load_settings()  # Load settings from file
 	exit.connect("pressed", _on_exit_pressed)
+	
+	master_slider.value = Save.config.get_value("audio", "master_volume", 1.0) * 100
+	music_slider.value = Save.config.get_value("audio", "music_volume", 1.0) * 100
+	sfx_slider.value = Save.config.get_value("audio", "sfx_volume", 1.0) * 100
+	
 
 	# **Fullscreen Toggle**
 	Fullscreen_btn.set_pressed_no_signal(Save.config.get_value("video", "fullscreen", false))
@@ -72,7 +80,8 @@ var input_actions = {
 	"move_left": "Move Left",
 	"move_right": "Move Right",
 	"interact": "Interact",
-	"select": "Select"
+	"select": "Select",
+	"pause": "Pause"
 }
 
 func _create_action_list():
@@ -135,14 +144,22 @@ func _on_reset_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file(Main_Menu)
 
+	#Audio Settings
 
-func _on_fullscreen_btn_pressed() -> void:
-	pass # Replace with function body.
+func _on_master_volume_btn_drag_ended(value_changed):
+	if value_changed:
+		var volume = master_slider.value / 100.0
+		Save.save_audio_settings("master_volume", volume)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume))
 
+func _on_sfx_btn_drag_ended(value_changed):
+	if value_changed:
+		var volume = sfx_slider.value / 100.0
+		Save.save_audio_settings("sfx_volume", volume)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(volume))
 
-func _on_window_size_btn_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
-
-
-func _on_vsync_btn_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+func _on_music_btn_drag_ended(value_changed):
+	if value_changed:
+		var volume = music_slider.value / 100.0
+		Save.save_audio_settings("music_volume", volume)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(volume))

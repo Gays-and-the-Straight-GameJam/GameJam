@@ -33,9 +33,10 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_krhx6")
 theme_override_font_sizes/font_size = 30
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -102,7 +103,6 @@ theme_override_fonts/font = ExtResource("1_krhx6")
 theme_override_font_sizes/font_size = 25
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
-visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_stretch_ratio = 3.75
@@ -124,7 +124,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 60
 alignment = 1
 
 [node name="MasterVolume" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
@@ -136,13 +136,22 @@ text = "Master Volume"
 [node name="MasterVolume_btn" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Music" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_krhx6")
+theme_override_font_sizes/font_size = 32
+text = "Music"
+
+[node name="Music_btn" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Sft" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krhx6")
 theme_override_font_sizes/font_size = 32
 text = "Sound FX?"
 
-[node name="Sft_btn" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Sfx_btn" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
@@ -239,13 +248,13 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krhx6")
 theme_override_font_sizes/font_size = 32
-text = "A1"
+text = "WIP"
 
 [node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krhx6")
 theme_override_font_sizes/font_size = 32
-text = "A2"
+text = "WIP2"
 
 [node name="Exit" type="Button" parent="."]
 unique_name_in_owner = true
@@ -268,6 +277,7 @@ icon_alignment = 1
 [connection signal="toggled" from="TabContainer/Graphics/MarginContainer/VBoxContainer/WindowSize_btn" to="." method="_on_bloom_btn_toggled"]
 [connection signal="item_selected" from="TabContainer/Graphics/MarginContainer/VBoxContainer/Vsync_btn" to="." method="_on_vsync_btn_item_selected"]
 [connection signal="toggled" from="TabContainer/Graphics/MarginContainer/VBoxContainer/Vsync_btn" to="." method="_on_vsync_btn_toggled"]
-[connection signal="value_changed" from="TabContainer/Sound/MarginContainer/VBoxContainer/MasterVolume_btn" to="." method="_on_master_volume_btn_value_changed"]
-[connection signal="value_changed" from="TabContainer/Sound/MarginContainer/VBoxContainer/Sft_btn" to="." method="_on_sft_btn_value_changed"]
+[connection signal="drag_ended" from="TabContainer/Sound/MarginContainer/VBoxContainer/MasterVolume_btn" to="." method="_on_master_volume_btn_drag_ended"]
+[connection signal="drag_ended" from="TabContainer/Sound/MarginContainer/VBoxContainer/Music_btn" to="." method="_on_music_btn_drag_ended"]
+[connection signal="drag_ended" from="TabContainer/Sound/MarginContainer/VBoxContainer/Sfx_btn" to="." method="_on_sfx_btn_drag_ended"]
 [connection signal="pressed" from="TabContainer/Controls/PanelContainer/MarginContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]

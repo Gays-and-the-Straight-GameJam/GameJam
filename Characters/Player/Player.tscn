@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://rsiho7r5by1s"]
+[gd_scene load_steps=96 format=3 uid="uid://rsiho7r5by1s"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_rjiuo"]
 [ext_resource type="Texture2D" uid="uid://eaw8qvqswoo5" path="res://Assets/Character/Player/hooded_idle_down.png" id="2_qbmqe"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c26pcej8syjdn" path="res://Assets/Character/Player/hooded_move_left.png" id="6_b81nm"]
 [ext_resource type="Texture2D" uid="uid://xef87ruh8llk" path="res://Assets/Character/Player/hooded_move_right.png" id="7_rlbgb"]
 [ext_resource type="Texture2D" uid="uid://ngnenepw47x3" path="res://Assets/Character/Player/hooded_move_up.png" id="7_sult1"]
+[ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="9_mmwf8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdcn2"]
 radius = 10.0499
@@ -814,6 +815,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_rjiuo")
 
+[node name="Level Timer" type="Timer" parent="."]
+
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 8)
 shape = SubResource("CircleShape2D_sdcn2")
@@ -843,3 +846,16 @@ parameters/Move/TimeScale/scale = 1.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 0)
 zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+top_level = true
+offset_right = 207.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(1, 0.151344, 0.108333, 1)
+theme_override_fonts/font = ExtResource("9_mmwf8")
+theme_override_font_sizes/font_size = 50
+text = "Time Left:"
+
+[connection signal="timeout" from="Level Timer" to="." method="_on_level_timer_timeout"]

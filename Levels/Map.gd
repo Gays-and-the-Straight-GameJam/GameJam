@@ -4,8 +4,8 @@ extends Node2D
 @onready var fuseProp = preload("res://Levels/Props/fuseProp.tscn")
 @onready var ControlPanel = preload("res://Levels/Props/ControlPanel.tscn")
 @onready var spawn_count = GlobalScript.numPuzzlesPerLevel
-
-
+@onready var pause_menu = $PauseLayer
+@export var OOT = "res://Levels/Menus/OOT.tscn"
 
 var all_nodes := []
 
@@ -40,3 +40,17 @@ func spawn_nodes():
 		elif node.name.begins_with("ShippingContainer"):
 				var ControlPanel = ControlPanel.instantiate()
 				all_nodes[i].add_child(ControlPanel)
+				
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		GlobalScript.paused = true
+		pauseMenu()
+		
+func pauseMenu():
+	if GlobalScript.paused:
+		pause_menu.show()
+		Engine.time_scale = 0
+	else:
+		pause_menu.hide()
+		Engine.time_scale = 1
+		

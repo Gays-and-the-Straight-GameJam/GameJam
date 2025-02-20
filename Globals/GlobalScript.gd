@@ -8,11 +8,14 @@ extends Node
 @onready var levelStarted = false
 @onready var mainMenu = true
 
+
 # Preload props so they can be instantiated later
 @onready var Controlpanel = preload("res://Levels/Props/ControlPanel.tscn")
 @onready var fuseProp = preload("res://Levels/Props/fuseProp.tscn")
 var prop_picker = [1,2,3]
 var is_dragging = false
+var time_limits = { 1: 60, 2: 180, 3: 360 }
+var paused = false
 
 func _ready() -> void:
 	GlobalSignals.connect("DragNDropCompleted", _on_drag_game_completed)
@@ -43,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		level += 1
 		levelComplete = false
 		levelStarted = false
+		load_next_level()
 
 # Game complete functions
 func _on_wire_game_completed(state : bool):
@@ -63,4 +67,15 @@ func _on_screen_game_completed(state : bool):
 
 func _start_level_one():
 	pass
+	
+func load_next_level():
+	if level > 3:
+		get_tree().change_scene_to_file("res://Levels/Menus/Win.tscn")
+		return
+	print("Loading Level ", level)
+	numPuzzlesLeft = numPuzzlesPerLevel[level - 1]
+	get_tree().reload_current_scene()
+
+func get_time_for_level():
+	return time_limits.get(level, 60)
 	
