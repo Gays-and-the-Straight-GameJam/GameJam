@@ -9,10 +9,13 @@ extends Node
 @onready var mainMenu = true
 
 # Preload props so they can be instantiated later
+@onready var Controlpanel = preload("res://Levels/Props/ControlPanel.tscn")
 @onready var fuseProp = preload("res://Levels/Props/fuseProp.tscn")
 var prop_picker = [1,2,3]
+var is_dragging = false
 
 func _ready() -> void:
+	GlobalSignals.connect("DragNDropCompleted", _on_drag_game_completed)
 	GlobalSignals.connect("wireGameCompleted", _on_wire_game_completed)
 	GlobalSignals.connect("batteryGameCompleted", _on_battery_game_completed)
 
@@ -48,6 +51,10 @@ func _on_wire_game_completed(state : bool):
 func _on_battery_game_completed(state : bool):
 	numPuzzlesLeft -= 1
 	print("Battery Game completed successfully")
+	
+func _on_drag_game_completed(state : bool):
+	numPuzzlesLeft -= 1
+	print("DragNDrop Game completed successfully")
 
 func _start_level_one():
 	pass
