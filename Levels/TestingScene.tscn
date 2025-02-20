@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4ppyuekhog4l"]
 
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
-[ext_resource type="PackedScene" uid="uid://beheryb2ty7q4" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
+[ext_resource type="PackedScene" uid="uid://84ovqkp3d0mn" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
 
 [node name="TestingScene" type="Node2D" groups=["Level"]]
 
