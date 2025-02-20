@@ -1,6 +1,6 @@
 extends Node
 
-@onready var level = 1
+@onready var level = 3
 @onready var numPuzzlesLeft = 0
 @onready var numPuzzlesPerLevel = [2,7,13]
 @onready var levelComplete = false
@@ -8,13 +8,20 @@ extends Node
 @onready var levelStarted = false
 @onready var mainMenu = true
 
+
 # Preload props so they can be instantiated later
+@onready var Controlpanel = preload("res://Levels/Props/ControlPanel.tscn")
 @onready var fuseProp = preload("res://Levels/Props/fuseProp.tscn")
 var prop_picker = [1,2,3]
+var is_dragging = false
 
 func _ready() -> void:
 	GlobalSignals.connect("wireGameCompleted", _on_wire_game_completed)
+<<<<<<< Updated upstream
 	GlobalSignals.connect("batteryGameCompleted", _on_battery_game_completed)
+=======
+	GlobalSignals.connect("DragNDropCompleted", _on_drag_game_completed)
+>>>>>>> Stashed changes
 
 func _physics_process(delta: float) -> void:
 	
@@ -44,6 +51,10 @@ func _physics_process(delta: float) -> void:
 func _on_wire_game_completed(state : bool):
 	numPuzzlesLeft -= 1
 	print("Wire Game completed successfully")
+	
+func _on_drag_game_completed(state : bool):
+	numPuzzlesLeft -= 1
+	print("DragNDrop Game completed successfully")
 
 func _on_battery_game_completed(state : bool):
 	numPuzzlesLeft -= 1

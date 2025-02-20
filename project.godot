@@ -37,6 +37,9 @@ enabled=PackedStringArray()
 Player=""
 Interactables=""
 Level=""
+square=""
+circle=""
+"circle hole"=""
 
 [input]
 
