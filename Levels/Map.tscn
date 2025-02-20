@@ -1,17 +1,95 @@
-[gd_scene load_steps=3 format=3 uid="uid://c52mr4eq7ah5h"]
+[gd_scene load_steps=5 format=3 uid="uid://c52mr4eq7ah5h"]
 
 [ext_resource type="Script" path="res://Levels/Map.gd" id="1_a5x5g"]
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_i6dr6"]
+[ext_resource type="PackedScene" uid="uid://cj0iwlx00slqs" path="res://Levels/Mini-games/GrabnDropMiniGame.tscn" id="3_wpgrf"]
+[ext_resource type="PackedScene" uid="uid://d2tgnu5nlf4ly" path="res://Levels/Mini-games/drag_circle.tscn" id="3_ypc0i"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_a5x5g")
 
-[node name="ElectricalRoomWires" type="Node2D" parent="."]
+[node name="Minigames" type="Node2D" parent="."]
+
+[node name="ElectricalRoomWires" type="Node2D" parent="Minigames"]
 unique_name_in_owner = true
 position = Vector2(52, 32)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(426, 24)
+[node name="ElectricalRoomWires2" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(178, 226)
+
+[node name="ElectricalRoomWires3" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(186, 178)
+
+[node name="ElectricalRoomWires4" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(188, 130)
+
+[node name="ElectricalRoomWires5" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(50, 240)
+
+[node name="ElectricalRoomWires6" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(49, 191)
+
+[node name="ElectricalRoomWires7" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(51, 135)
+
+[node name="ElectricalRoomWires8" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(53, 85)
+
+[node name="ElectricalRoomWires9" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-49, 252)
+
+[node name="ElectricalRoomWires10" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-52, 198)
+
+[node name="ElectricalRoomWires11" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-56, 149)
+
+[node name="ElectricalRoomWires12" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(190, 89)
+
+[node name="ElectricalRoomWires13" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-50, 89)
+
+[node name="ElectricalRoomWires14" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-48, 33)
+
+[node name="ElectricalRoomWires15" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(187, 29)
+
+[node name="Control" parent="." instance=ExtResource("3_wpgrf")]
+offset_left = 404.0
+offset_top = -62.0
+offset_right = 454.0
+offset_bottom = -12.0
+
+[node name="Control2" parent="." instance=ExtResource("3_wpgrf")]
+offset_left = 543.0
+offset_top = -63.0
+offset_right = 593.0
+offset_bottom = -13.0
+
+[node name="Control3" parent="." instance=ExtResource("3_wpgrf")]
+offset_left = 286.0
+offset_top = -61.0
+offset_right = 336.0
+offset_bottom = -11.0
+
+[node name="Drag_Circle" parent="." instance=ExtResource("3_ypc0i")]
+position = Vector2(546, 65)
 
 [node name="Player" parent="." instance=ExtResource("2_i6dr6")]
-position = Vector2(199, 117)
+position = Vector2(370, 75)
