@@ -1,6 +1,6 @@
 extends Node
 
-@onready var level = 1
+@onready var level = 3
 @onready var numPuzzlesLeft = 0
 @onready var numPuzzlesPerLevel = [2,7,13]
 @onready var levelComplete = false
