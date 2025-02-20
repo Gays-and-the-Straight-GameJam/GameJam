@@ -1,17 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4ppyuekhog4l"]
-
-[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
-[ext_resource type="PackedScene" uid="uid://84ovqkp3d0mn" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
-
-[node name="TestingScene" type="Node2D" groups=["Level"]]
-
-[node name="Player" parent="." instance=ExtResource("1_sktmd")]
-top_level = true
-position = Vector2(101, 37)
-
-[node name="FuseProp" parent="." instance=ExtResource("3_n7per")]
-position = Vector2(172.549, 11.6159)
-[gd_scene load_steps=3 format=3 uid="uid://suqmip356k4h"]
+[gd_scene load_steps=3 format=3 uid="uid://c6oodhbr58jd5"]
 
 [ext_resource type="Script" path="res://Levels/Map.gd" id="1_a5x5g"]
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_i6dr6"]
