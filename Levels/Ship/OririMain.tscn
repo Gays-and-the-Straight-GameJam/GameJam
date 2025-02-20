@@ -186,7 +186,6 @@ tile_set = SubResource("TileSet_xsgx4")
 use_kinematic_bodies = true
 
 [node name="ObjectLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AACOACMAAAABACEAAAA=")
 tile_set = SubResource("TileSet_xsgx4")
 
 [node name="Player" parent="." instance=ExtResource("2_ki8ys")]
