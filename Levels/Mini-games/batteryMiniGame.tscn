@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm0qs1a8qequd"]
+
+[ext_resource type="Script" path="res://Levels/Mini-games/battery_mini_game.gd" id="1_8tcud"]
+
+[node name="batteryMiniGame" type="Popup"]
+disable_3d = true
+initial_position = 1
+size = Vector2i(600, 650)
+visible = true
+borderless = false
+always_on_top = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8tcud")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(600, 650)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 0.584314, 0.466667, 1)
+
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start
+"
+
+[node name="batterySlot" type="Node2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(300, 300)
+
+[node name="batterySpawn" type="Node2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(300, 500)

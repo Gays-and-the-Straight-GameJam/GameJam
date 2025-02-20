@@ -14,6 +14,7 @@ var prop_picker = [1,2,3]
 
 func _ready() -> void:
 	GlobalSignals.connect("wireGameCompleted", _on_wire_game_completed)
+	GlobalSignals.connect("batteryGameCompleted", _on_battery_game_completed)
 
 func _physics_process(delta: float) -> void:
 	
@@ -43,6 +44,10 @@ func _physics_process(delta: float) -> void:
 func _on_wire_game_completed(state : bool):
 	numPuzzlesLeft -= 1
 	print("Wire Game completed successfully")
+
+func _on_battery_game_completed(state : bool):
+	numPuzzlesLeft -= 1
+	print("Battery Game completed successfully")
 
 func _start_level_one():
 	pass

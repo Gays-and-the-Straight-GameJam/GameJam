@@ -7,8 +7,6 @@ extends CharacterBody2D
 @onready var root = $".".get_parent()
 @onready var solved = false
 
-const wireMiniGame = preload("res://Levels/Mini-games/WireMiniGame.tscn")
-
 var entered = false
 var interactedWith = false
 
@@ -22,14 +20,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	pass
 	
-	
-	
 func _on_interact(state : bool, objectId : int):
 	if state == true and objectId == self.objectID and self.solved == false:
+		GlobalSignals.batteryPickedUp.emit(true)
 		print("Interacted with: " + str(self.objectID))
-		var wireGameInstance = wireMiniGame.instantiate()
-		self.add_child(wireGameInstance)
-		GlobalSignals.inMiniGame.emit(true)
+		self.queue_free()
+	else: 
+		GlobalSignals.batteryPickedUp.emit(false)
+		
 		
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):

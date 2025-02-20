@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ml8nt4yapbuh"]
+
+[ext_resource type="Texture2D" uid="uid://dogsvwg06rxpi" path="res://Assets/Props/Power_station_no_battery.png" id="1_iorfc"]
+[ext_resource type="Script" path="res://Levels/Props/battery_slot_prop.gd" id="1_of61w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qgd5"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8bvb"]
+size = Vector2(62, 28)
+
+[node name="BatterySlotProp" type="CharacterBody2D"]
+script = ExtResource("1_of61w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_3qgd5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iorfc")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-1, 9)
+shape = SubResource("RectangleShape2D_u8bvb")
