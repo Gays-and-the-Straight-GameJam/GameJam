@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ppyuekhog4l"]
+
+[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
+[ext_resource type="PackedScene" uid="uid://84ovqkp3d0mn" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
+
+[node name="TestingScene" type="Node2D" groups=["Level"]]
+
+[node name="Player" parent="." instance=ExtResource("1_sktmd")]
+top_level = true
+position = Vector2(101, 37)
+
+[node name="FuseProp" parent="." instance=ExtResource("3_n7per")]
+position = Vector2(172.549, 11.6159)
+[gd_scene load_steps=3 format=3 uid="uid://suqmip356k4h"]
+
+[ext_resource type="Script" path="res://Levels/Map.gd" id="1_a5x5g"]
+[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_i6dr6"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_a5x5g")
+
+[node name="Minigames" type="Node2D" parent="."]
+
+[node name="ElectricalRoomWires" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(52, 32)
+
+[node name="ElectricalRoomWires2" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(178, 226)
+
+[node name="ElectricalRoomWires3" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(186, 178)
+
+[node name="ElectricalRoomWires4" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(188, 130)
+
+[node name="ElectricalRoomWires5" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(50, 240)
+
+[node name="ElectricalRoomWires6" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(49, 191)
+
+[node name="ElectricalRoomWires7" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(51, 135)
+
+[node name="ElectricalRoomWires8" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(53, 85)
+
+[node name="ElectricalRoomWires9" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-49, 252)
+
+[node name="ElectricalRoomWires10" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-52, 198)
+
+[node name="ElectricalRoomWires11" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-56, 149)
+
+[node name="ElectricalRoomWires12" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(190, 89)
+
+[node name="ElectricalRoomWires13" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-50, 89)
+
+[node name="ElectricalRoomWires14" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(-48, 33)
+
+[node name="ElectricalRoomWires15" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(187, 29)
+
+[node name="ShippingContainer" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(555, 139)
+
+[node name="ShippingContainer2" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(574, 45)
+
+[node name="ShippingContainer3" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(777, 247)
+
+[node name="ShippingContainer4" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(781, 170)
+
+[node name="ShippingContainer5" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(776, 106)
+
+[node name="ShippingContainer6" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(776, 44)
+
+[node name="ShippingContainer7" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(671, 255)
+
+[node name="ShippingContainer8" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(665, 180)
+
+[node name="ShippingContainer9" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(659, 115)
+
+[node name="ShippingContainer10" type="Node2D" parent="Minigames"]
+unique_name_in_owner = true
+position = Vector2(660, 50)
+
+[node name="Player" parent="." instance=ExtResource("2_i6dr6")]
+position = Vector2(370, 75)
