@@ -4,10 +4,11 @@ extends CharacterBody2D
 @onready var playerNode = get_tree().get_first_node_in_group("Player")
 @onready var playerID = playerNode.get_instance_id()
 @onready var detectionArea = get_node("DetectionArea")
+@onready var sprite = $Sprite2D
 @onready var root = $".".get_parent()
 @onready var solved = false
 
-const wireMiniGame = preload("res://Levels/Mini-games/WireMiniGame.tscn")
+const batteryMiniGame = preload("res://Levels/Mini-games/batteryMiniGame.tscn")
 
 var entered = false
 var interactedWith = false
@@ -20,15 +21,15 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	if solved == true:
+		self.sprite.texture = load("res://Assets/Props/Power_station_battery.png")
 	pass
-	
-	
 	
 func _on_interact(state : bool, objectId : int):
 	if state == true and objectId == self.objectID and self.solved == false:
 		print("Interacted with: " + str(self.objectID))
-		var wireGameInstance = wireMiniGame.instantiate()
-		self.add_child(wireGameInstance)
+		var batteryGameInstance = batteryMiniGame.instantiate()
+		self.add_child(batteryGameInstance)
 		GlobalSignals.inMiniGame.emit(true)
 		
 func _on_body_entered(body: Node2D):

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var playerID = self.get_instance_id()
 @onready var interactingWith = 0
 @onready var inMiniGame = false
+@onready var batteries = 0
 
 enum  {Move}
 var state = Move
@@ -16,6 +17,7 @@ func _ready() -> void:
 	GlobalSignals.playerIDSignal.emit(playerID)
 	GlobalSignals.objectIDSignal.connect(_object_interacted_with)
 	GlobalSignals.inMiniGame.connect(_in_mini_game)
+	GlobalSignals.batteryPickedUp.connect(_on_battery_pickup)
 	
 func _physics_process(delta: float) -> void:
 	
@@ -27,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	#Interact with something
 	if Input.is_action_just_pressed("interact") and inMiniGame == false:
 		GlobalSignals.interact.emit(true,interactingWith)
+		GlobalSignals.batteryCount.emit(batteries)
 	else:
 		GlobalSignals.interact.emit(false,0)
 
@@ -51,3 +54,8 @@ func _object_not_interacted_with():
 
 func _in_mini_game(state : bool):
 	inMiniGame = state
+
+func _on_battery_pickup(state : bool):
+	if state == true:
+		self.batteries += 1
+		GlobalSignals.batteryPickedUp.emit(false)
