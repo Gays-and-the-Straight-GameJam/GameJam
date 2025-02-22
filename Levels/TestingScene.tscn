@@ -16,6 +16,15 @@ position = Vector2(101, 37)
 [node name="FuseProp" parent="." instance=ExtResource("3_n7per")]
 position = Vector2(172.549, 11.6159)
 
+[node name="FuseProp2" parent="." instance=ExtResource("3_n7per")]
+position = Vector2(172.549, 11.6159)
+
+[node name="FuseProp3" parent="." instance=ExtResource("3_n7per")]
+position = Vector2(188, -102)
+
+[node name="FuseProp4" parent="." instance=ExtResource("3_n7per")]
+position = Vector2(119, -88)
+
 [node name="BrokenScreenProp" parent="." instance=ExtResource("5_ho3j1")]
 
 [node name="Battery" parent="." instance=ExtResource("3_ocs4m")]
@@ -26,3 +35,12 @@ position = Vector2(259, -12)
 
 [node name="ControlPanel" parent="." instance=ExtResource("6_43dq6")]
 position = Vector2(93, -4)
+
+[node name="ControlPanel2" parent="." instance=ExtResource("6_43dq6")]
+position = Vector2(221, 202)
+
+[node name="ControlPanel3" parent="." instance=ExtResource("6_43dq6")]
+position = Vector2(115, 199)
+
+[node name="ControlPanel4" parent="." instance=ExtResource("6_43dq6")]
+position = Vector2(32, 175)

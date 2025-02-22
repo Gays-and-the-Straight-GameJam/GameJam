@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://j3m8ws6rw81v"]
+
+[ext_resource type="Texture2D" uid="uid://clrpcrkho4r6n" path="res://Assets/Ship/Screen2.png" id="1_mjq3f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3ion"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(0, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u15bq"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(31, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygkpb"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(62, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg88m"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(93, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhubk"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(124, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ikkt"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(155, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5pni"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(186, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dqp0"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(217, 0, 31, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wueja"]
+atlas = ExtResource("1_mjq3f")
+region = Rect2(248, 0, 31, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm8bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3ion")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u15bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygkpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg88m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhubk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ikkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5pni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dqp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wueja")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Screen2" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rm8bm")
+frame_progress = 0.0771282

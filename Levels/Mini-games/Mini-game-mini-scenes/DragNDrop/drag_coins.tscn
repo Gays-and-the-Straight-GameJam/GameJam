@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy6lf1i5wmkcj"]
+[gd_scene load_steps=4 format=3 uid="uid://x0rgcbic4moy"]
 
-[ext_resource type="Script" path="res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/drag_triangle.gd" id="1_akace"]
-[ext_resource type="Texture2D" uid="uid://bjt13on02nfv4" path="res://Assets/Props/Drag_object3.png" id="1_gtl2k"]
+[ext_resource type="Script" path="res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/drag_triangle.gd" id="1_mxeya"]
+[ext_resource type="Texture2D" uid="uid://ceuu7hlpto6vh" path="res://Assets/Props/Drag_object7.png" id="2_2u43w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og3jq"]
 size = Vector2(41, 21)
 
 [node name="Node2D" type="Node2D"]
 top_level = true
-script = ExtResource("1_akace")
+script = ExtResource("1_mxeya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_gtl2k")
+texture = ExtResource("2_2u43w")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
