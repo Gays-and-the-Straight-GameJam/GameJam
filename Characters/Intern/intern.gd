@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var radiuslimit = 50
 
 @onready var animTree = $AnimationTree
-@onready var closestEntity = $ClosestEntity
+#@onready var closestEntity = $ClosestEntity
 @onready var playerCollision = $PlayerCollision
 
 var knockback_dir = Vector2.ZERO
@@ -21,11 +21,11 @@ enum FollowerState{
 
 var current_state = FollowerState.IDLE
 
-signal enemy_attacked
 
 func _physics_process(delta):
 	
-	var player = get_parent().get_node("Player")
+	var player = get_tree().get_first_node_in_group("Player")
+	
 	if mov_direction == Vector2.ZERO:
 		animTree.get("parameters/playback").travel("Idle")
 	else:

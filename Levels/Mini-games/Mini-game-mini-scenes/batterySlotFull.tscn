@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx53g5fm64xt3"]
+
+[ext_resource type="Texture2D" uid="uid://ccn2fuupyy2tq" path="res://Assets/Props/Battery_Filled.png" id="1_wvegx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk26e"]
+size = Vector2(32.6667, 12)
+
+[node name="BatterySlotFull" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wvegx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.666667, -4)
+shape = SubResource("RectangleShape2D_dk26e")

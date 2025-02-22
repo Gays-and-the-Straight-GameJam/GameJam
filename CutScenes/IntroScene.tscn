@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://yqk4mhynop7e"]
+[gd_scene load_steps=8 format=3 uid="uid://yqk4mhynop7e"]
 
-[ext_resource type="PackedScene" uid="uid://sbm2r24eh1eh" path="res://Levels/Ship/OririMain.tscn" id="1_g6ly7"]
 [ext_resource type="Script" path="res://CutScenes/intro_scene.gd" id="1_obfxd"]
 [ext_resource type="PackedScene" uid="uid://qajrn5gqgvvs" path="res://Characters/Intern/Intern.tscn" id="2_2o4bu"]
-[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_5gtu7"]
+[ext_resource type="PackedScene" uid="uid://dt1o1ykyv4j7m" path="res://Levels/Ship/MainMap.tscn" id="2_dbtt1"]
 [ext_resource type="AudioStream" uid="uid://kfg2h68lqf3o" path="res://Assets/Audio/mixkit-battleship-alarm-1001.wav" id="3_2vtq8"]
-[ext_resource type="PackedScene" uid="uid://c8e64nrrixv3k" path="res://Characters/Captain/Captain.tscn" id="3_bbhat"]
 
 [sub_resource type="Animation" id="Animation_v2y12"]
 length = 0.001
@@ -60,7 +58,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Captain/RichTextLabel:visible")
+tracks/4/path = NodePath("RichTextLabel:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -72,7 +70,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Captain/RichTextLabel:text")
+tracks/5/path = NodePath("RichTextLabel:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -93,7 +91,7 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8, 3.13333, 3.53333, 3.93333, 4.33333, 4.73333, 5.12793, 5.52793, 5.53333, 5.93333, 6.33333, 6.73333, 7.13333, 7.52793, 7.92793),
+"times": PackedFloat32Array(0, 0.8, 4.63333, 5.03333, 5.43333, 5.83333, 6.23333, 6.62793, 7.02793, 7.03333, 7.43333, 7.83333, 8.23333, 8.63333, 9.02793, 9.42793),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0.380392, 0, 0, 0), Color(0.760784, 0, 0, 0.745098), Color(0.760784, 0, 0, 0), Color(0.760784, 0, 0, 0.745098), Color(0.760784, 0, 0, 0), Color(0.760784, 0, 0, 0.745098), Color(0.760784, 0, 0, 0), Color(0.380392, 0, 0, 0), Color(0.760784, 0, 0, 0.745098), Color(0.760784, 0, 0, 0), Color(0.760784, 0, 0, 0.745098), Color(0.760784, 0, 0, 0), Color(0.760784, 0, 0, 0.745098), Color(0.760784, 0, 0, 0)]
@@ -143,15 +141,15 @@ tracks/4/path = NodePath("AudioStreamPlayer:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(2.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(4, 7.96667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Captain/RichTextLabel:visible")
+tracks/5/path = NodePath("RichTextLabel:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -163,7 +161,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Captain/RichTextLabel:text")
+tracks/6/path = NodePath("RichTextLabel:text")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -183,29 +181,20 @@ _data = {
 [node name="IntroScene" type="Node2D"]
 script = ExtResource("1_obfxd")
 
-[node name="ISSOriri" parent="." instance=ExtResource("1_g6ly7")]
+[node name="MainMap" parent="." instance=ExtResource("2_dbtt1")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_q7qk6")
 }
 
-[node name="Intern" parent="." instance=ExtResource("2_2o4bu")]
-position = Vector2(1929, 640)
-
-[node name="Captain" parent="." instance=ExtResource("3_bbhat")]
-position = Vector2(2488, 601)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Captain"]
-offset_left = -136.0
-offset_top = 49.0
-offset_right = 151.0
-offset_bottom = 119.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 2284.0
+offset_top = 674.5
+offset_right = 2571.0
+offset_bottom = 744.5
 text = "So far the flight has been going well.
 Hopefully nothing goes wrong."
-
-[node name="Player" parent="." instance=ExtResource("2_5gtu7")]
-position = Vector2(2488, 634)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -3044.0
@@ -213,6 +202,9 @@ offset_top = -77.0
 offset_right = 3892.0
 offset_bottom = 972.0
 color = Color(0, 0, 0, 1)
+
+[node name="Intern" parent="." instance=ExtResource("2_2o4bu")]
+position = Vector2(1929, 640)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2vtq8")

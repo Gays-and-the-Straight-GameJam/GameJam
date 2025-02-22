@@ -18,7 +18,7 @@ func _ready() -> void:
 	rootNode.popup_hide.connect(_on_battery_mini_game_popup_hide)
 	button.pressed.connect(_on_start_pressed)
 	
-	if playerNode.batteries != 0:
+	if playerNode.batteries > 0:
 		batterySpawn.add_child(battery)
 		battery.position = batterySpawn.position
 	batterySlot.add_child(batteryslotEmpty)
@@ -43,6 +43,7 @@ func _on_start_pressed():
 	if solved == true:
 		GlobalSignals.batteryGameCompleted.emit(true)
 		GlobalSignals.inMiniGame.emit(false)
+		playerNode.batteries -= 1
 		parent.solved = true
 		rootNode.queue_free()
 

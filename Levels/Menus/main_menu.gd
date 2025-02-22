@@ -6,7 +6,7 @@ extends Control
 @onready var Quit = $VBoxContainer/Quit as Button
 @onready var menu_music = $AudioStreamPlayer
 @export var Options_menu : String = "res://Levels/Menus/options_tab.tscn"
-@export var level_1 : String = "res://Levels/Map.tscn"
+@export var intro : String = "res://CutScenes/IntroScene.tscn"
 
 
 func _ready() -> void:
@@ -17,7 +17,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	Signals.MainMenu.emit(false)
 	MusicManager.stop_music()
-	get_tree().change_scene_to_file(level_1)
+	get_tree().change_scene_to_file(intro)
 	
 
 func _on_options_pressed() -> void:

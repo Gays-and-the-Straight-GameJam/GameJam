@@ -1,8 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://d17hmyiymt0js"]
+[gd_scene load_steps=43 format=3 uid="uid://dt1o1ykyv4j7m"]
 
+[ext_resource type="Script" path="res://Levels/Ship/Map_logic.gd" id="1_cdvu1"]
 [ext_resource type="Texture2D" uid="uid://dp7p2xn1f6ch2" path="res://Assets/Ship/WholeShip.png" id="1_uktc8"]
-[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_ifdeu"]
 [ext_resource type="PackedScene" uid="uid://e8o6tr4dhej0" path="res://Levels/Props/ShippingContainer.tscn" id="3_t681x"]
+[ext_resource type="PackedScene" uid="uid://c8e64nrrixv3k" path="res://Characters/Captain/Captain.tscn" id="4_i8j3f"]
+[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="5_r4ame"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_c6r5k"]
 a = Vector2(1, -41)
@@ -122,7 +124,8 @@ size = Vector2(87, 30)
 
 [node name="MainMap" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(377, 241)
+position = Vector2(563, 281)
+script = ExtResource("1_cdvu1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -176.0
@@ -181,6 +184,18 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(759, 620)
 scale = Vector2(1.5, 1.5)
 
+[node name="batteryNodeOne" type="Node2D" parent="."]
+position = Vector2(1683, 473)
+
+[node name="batteryNodeTwo" type="Node2D" parent="."]
+position = Vector2(1161, 65)
+
+[node name="batteryNodeThree" type="Node2D" parent="."]
+position = Vector2(114, 652)
+
+[node name="batteryNodeFour" type="Node2D" parent="."]
+position = Vector2(489, 79)
+
 [node name="ShippingContainer" parent="." instance=ExtResource("3_t681x")]
 y_sort_enabled = true
 position = Vector2(484, 276)
@@ -222,10 +237,6 @@ y_sort_enabled = true
 position = Vector2(189, 468)
 
 [node name="ShippingContainers" type="Node" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("2_ifdeu")]
-y_sort_enabled = true
-position = Vector2(1276, 131)
 
 [node name="borders" type="CharacterBody2D" parent="."]
 
@@ -378,3 +389,13 @@ shape = SubResource("RectangleShape2D_kc7xx")
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="borders"]
 position = Vector2(1277.5, 113)
 shape = SubResource("RectangleShape2D_av3h3")
+
+[node name="Captain" parent="." instance=ExtResource("4_i8j3f")]
+position = Vector2(1936, 350)
+
+[node name="Player" parent="." instance=ExtResource("5_r4ame")]
+position = Vector2(1937, 399)
+
+[node name="InternSpawnPoint" type="Node2D" parent="."]
+position = Vector2(1398, 363)
+scale = Vector2(1.25, 1.25)
