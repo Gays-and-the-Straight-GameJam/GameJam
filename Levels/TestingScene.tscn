@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4ppyuekhog4l"]
+[gd_scene load_steps=6 format=3 uid="uid://c4ppyuekhog4l"]
 
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
 [ext_resource type="PackedScene" uid="uid://84ovqkp3d0mn" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
+[ext_resource type="PackedScene" path="res://Levels/Props/brokenScreenProp.tscn" id="3_tshbf"]
+[ext_resource type="PackedScene" path="res://Levels/Props/batterySlotProp.tscn" id="4_vyrk6"]
+[ext_resource type="PackedScene" path="res://Levels/Props/battery.tscn" id="5_f6q6t"]
 
 [node name="TestingScene" type="Node2D" groups=["Level"]]
 
@@ -11,3 +14,12 @@ position = Vector2(101, 37)
 
 [node name="FuseProp" parent="." instance=ExtResource("3_n7per")]
 position = Vector2(172.549, 11.6159)
+
+[node name="BrokenScreenProp" parent="." instance=ExtResource("3_tshbf")]
+position = Vector2(-297, 44)
+
+[node name="BatterySlotProp" parent="." instance=ExtResource("4_vyrk6")]
+position = Vector2(-441, 43)
+
+[node name="Battery" parent="." instance=ExtResource("5_f6q6t")]
+position = Vector2(-165, 55)

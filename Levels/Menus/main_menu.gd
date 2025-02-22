@@ -7,12 +7,13 @@ extends Control
 @onready var menu_music = $AudioStreamPlayer
 @export var Options_menu : String = "res://Levels/Menus/options_tab.tscn"
 @export var level_1 : String = "res://Levels/Map.tscn"
-
+@onready var animated_texture = preload("res://Assets/Props/AnimatedBackground.tres")
+ 
 
 func _ready() -> void:
 	$VBoxContainer/Start.grab_focus()
-	MusicManager.play_music("res://Assets/Music/Main_menu_theme.wav")
-	
+	get_node("/root/MusicManager").play_music()
+	$TextureRect.texture = animated_texture
 
 func _on_start_pressed() -> void:
 	Signals.MainMenu.emit(false)

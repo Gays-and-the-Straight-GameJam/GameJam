@@ -7,6 +7,7 @@ extends Control
 @onready var master_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/MasterVolume_btn
 @onready var music_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/Music_btn
 @onready var sfx_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/Sfx_btn
+@onready var animated_texture = preload("res://Assets/Props/AnimatedBackground.tres")
 @export var Main_Menu : String = "res://Levels/Menus/main_menu.tscn"
 @onready var exit = get_node("%Exit")
 
@@ -14,7 +15,6 @@ extends Control
 func _ready() -> void:
 	Save.load_settings()  # Load settings from file
 	exit.connect("pressed", _on_exit_pressed)
-	
 	master_slider.value = Save.config.get_value("audio", "master_volume", 1.0) * 100
 	music_slider.value = Save.config.get_value("audio", "music_volume", 1.0) * 100
 	sfx_slider.value = Save.config.get_value("audio", "sfx_volume", 1.0) * 100
