@@ -7,6 +7,7 @@ extends Node
 @onready var introComplete = true
 @onready var levelStarted = false
 @onready var mainMenu = true
+@onready var inCutscene = true
 
 
 # Preload props so they can be instantiated later

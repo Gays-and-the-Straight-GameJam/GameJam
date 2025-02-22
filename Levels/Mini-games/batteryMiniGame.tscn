@@ -47,3 +47,11 @@ position = Vector2(300, 300)
 
 [node name="batterySpawn" type="Node2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(300, 500)
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Drag the battery to the generator"
+horizontal_alignment = 1

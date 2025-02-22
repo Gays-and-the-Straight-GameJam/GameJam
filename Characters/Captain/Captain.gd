@@ -9,7 +9,6 @@ extends CharacterBody2D
 @export var max_stop_time = 3.0  # Maximum time to stop
 @export var activation_range = 300.0  # Range within which the player activates the NPC
 
-
 var target_position: Vector2  
 var is_walking: bool = false  
 var timer = 0.0 
@@ -38,7 +37,7 @@ func _process(delta):
 
 	
 	timer -= delta
-	if timer <= 0:
+	if timer <= 0 and GlobalScript.inCutscene == false:
 		if is_walking:
 			
 			is_walking = false

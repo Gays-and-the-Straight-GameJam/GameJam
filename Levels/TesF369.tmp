@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ppyuekhog4l"]
+
+[ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="1_sktmd"]
+[ext_resource type="PackedScene" uid="uid://beheryb2ty7q4" path="res://Levels/Props/fuseProp.tscn" id="3_n7per"]
+[ext_resource type="PackedScene" uid="uid://ba2kkar76xg84" path="res://Levels/Props/brokenScreenProp.tscn" id="5_ho3j1"]
+
+[node name="TestingScene" type="Node2D" groups=["Level"]]
+
+[node name="Player" parent="." instance=ExtResource("1_sktmd")]
+top_level = true
+position = Vector2(101, 37)
+
+[node name="FuseProp" parent="." instance=ExtResource("3_n7per")]
+position = Vector2(172.549, 11.6159)
+
+[node name="BrokenScreenProp" parent="." instance=ExtResource("5_ho3j1")]
