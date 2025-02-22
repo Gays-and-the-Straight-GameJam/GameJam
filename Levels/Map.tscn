@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6oodhbr58jd5"]
+[gd_scene load_steps=4 format=3 uid="uid://c6oodhbr58jd5"]
 
 [ext_resource type="Script" path="res://Levels/Map.gd" id="1_a5x5g"]
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_i6dr6"]
+[ext_resource type="PackedScene" uid="uid://e8o6tr4dhej0" path="res://Levels/Props/ShippingContainer.tscn" id="3_83cuw"]
 
 [node name="Map" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_a5x5g")
 
 [node name="Minigames" type="Node2D" parent="."]
@@ -109,4 +111,9 @@ unique_name_in_owner = true
 position = Vector2(660, 50)
 
 [node name="Player" parent="." instance=ExtResource("2_i6dr6")]
+y_sort_enabled = true
 position = Vector2(370, 75)
+
+[node name="ShippingContainer" parent="." instance=ExtResource("3_83cuw")]
+y_sort_enabled = true
+position = Vector2(364, -72)

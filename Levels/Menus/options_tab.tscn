@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://deaixlobxpe2i"]
+[gd_scene load_steps=5 format=3 uid="uid://deaixlobxpe2i"]
 
 [ext_resource type="Script" path="res://Levels/Menus/options_tab.gd" id="1_0fyri"]
 [ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="1_krhx6"]
+[ext_resource type="Texture2D" uid="uid://c0vknb4lahk26" path="res://Assets/Props/AnimatedBackground.tres" id="2_fr47l"]
 [ext_resource type="PackedScene" uid="uid://vtd5m813eptr" path="res://Levels/Menus/input_settings.tscn" id="3_0jje5"]
 
 [node name="OptionsTab" type="Control"]
@@ -11,6 +12,18 @@ anchor_right = 1.0
 anchor_bottom = 0.867284
 script = ExtResource("1_0fyri")
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -108.334
+offset_bottom = 143.333
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fr47l")
+stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

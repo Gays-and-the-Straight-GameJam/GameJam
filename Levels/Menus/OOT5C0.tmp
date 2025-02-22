@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://75jjfgrayjo4"]
+[gd_scene load_steps=4 format=3 uid="uid://ceq6ovar7iys6"]
 
-[ext_resource type="Script" path="res://Win.gd" id="1_56yu0"]
-[ext_resource type="Texture2D" uid="uid://88p55wrmm4od" path="res://Assets/Props/Win.png" id="2_pakyj"]
-[ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_xdcwl"]
+[ext_resource type="Script" path="res://Levels/Menus/OOT.gd" id="1_vngew"]
+[ext_resource type="Texture2D" uid="uid://dqxu0423xj1ck" path="res://Assets/Props/Death.png" id="2_0jmxj"]
+[ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_wlqru"]
 
-[node name="Control" type="Control"]
+[node name="Death" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_56yu0")
+script = ExtResource("1_vngew")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("2_pakyj")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0jmxj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -35,7 +35,7 @@ grow_vertical = 2
 
 [node name="Main_menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xdcwl")
+theme_override_fonts/font = ExtResource("2_wlqru")
 theme_override_font_sizes/font_size = 32
 text = "Return to main menu"
 icon_alignment = 1
@@ -43,7 +43,7 @@ vertical_icon_alignment = 2
 
 [node name="Exit_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xdcwl")
+theme_override_fonts/font = ExtResource("2_wlqru")
 theme_override_font_sizes/font_size = 32
 text = "Exit Game"
 
@@ -57,11 +57,10 @@ offset_top = 225.0
 offset_right = 264.0
 offset_bottom = 285.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.793634, 0.318033, 0.53948, 1)
-theme_override_fonts/font = ExtResource("2_xdcwl")
-theme_override_font_sizes/font_size = 60
-text = "You've beaten all our current levels!
-Give yourself a pat on the back! YAY"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wlqru")
+theme_override_font_sizes/font_size = 50
+text = "You ran out of time, be a little faster next time!!!"
 
 [connection signal="pressed" from="VBoxContainer/Main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit_btn" to="." method="_on_exit_btn_pressed"]
