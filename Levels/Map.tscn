@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/Map.gd" id="1_a5x5g"]
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_i6dr6"]
-[ext_resource type="PackedScene" uid="uid://cp5xhwuja66aa" path="res://Levels/Props/ShippingContainer.tscn" id="3_83cuw"]
+[ext_resource type="PackedScene" uid="uid://e8o6tr4dhej0" path="res://Levels/Props/ShippingContainer.tscn" id="3_83cuw"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
