@@ -9,7 +9,7 @@ extends Control
 
 func _ready() -> void:
 	main_menu.grab_focus()
-	MusicManager.play_music("res://Assets/Music/Win_Song.mp3")
+	get_node("/root/MusicManager").play_music()
 	main_menu.connect("pressed",_on_main_menu_pressed)
 	exit_btn.connect("pressed",_on_exit_btn_pressed)
 

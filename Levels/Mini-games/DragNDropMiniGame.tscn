@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6vbhga8alsqc"]
+[gd_scene load_steps=3 format=3 uid="uid://cn0poi3vmovp4"]
 
 [ext_resource type="Script" path="res://Levels/Mini-games/DragNDropMinigame.gd" id="1_fr6qg"]
 [ext_resource type="Texture2D" uid="uid://elnli3xe33ia" path="res://Assets/Props/Tiny_Shelf.png" id="2_dwxs4"]
@@ -92,5 +92,17 @@ unique_name_in_owner = true
 position = Vector2(1070, 700)
 
 [node name="point12" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(870, 700)
+
+[node name="point13" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(870, 700)
+
+[node name="point14" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+position = Vector2(870, 700)
+
+[node name="point15" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
 position = Vector2(870, 700)
