@@ -8,7 +8,7 @@ extends SubViewportContainer
 @onready var sword2 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/sword.tscn").instantiate()
 @onready var cannon1 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/cannon.tscn").instantiate()
 @onready var cannon2 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/cannon.tscn").instantiate()
-
+@onready var button = $SubViewport/Button
 
 @onready var left = [Vector2(50,100),Vector2(50,200),Vector2(50,300)]
 @onready var right = [Vector2(350,100),Vector2(350,200),Vector2(350,300)]
@@ -28,7 +28,7 @@ var cannonSolved = false
 
 func _ready() -> void:
 	
-	#testing code
+	button.connect("pressed",_on_button_pressed)
 	
 	# randomized sprite placement
 	randomizedLeft.shuffle()
@@ -63,43 +63,43 @@ func _physics_process(delta: float) -> void:
 		print(clicks)
 		if clicks.size() == 2:
 			drawable = true
-			if star1.position.distance_to(clicks[0]) <= 10 && star2.position.distance_to(clicks[1]) <= 10 && starSolved == false:
+			if star1.position.distance_to(clicks[0]) <= 20 && star2.position.distance_to(clicks[1]) <= 20 && starSolved == false:
 				%starWire.add_point(clicks[0])
 				%starWire.add_point(clicks[1])
 				starSolved = true
 				print("Connected")
-			elif star2.position.distance_to(clicks[0]) <= 10 && star1.position.distance_to(clicks[1]) <= 10 && starSolved == false:
+			elif star2.position.distance_to(clicks[0]) <= 20 && star1.position.distance_to(clicks[1]) <= 20 && starSolved == false:
 				%starWire.add_point(clicks[0])
 				%starWire.add_point(clicks[1])
 				starSolved = true
 				print("Connected Reverse")
-			elif sword1.position.distance_to(clicks[0]) <= 10 && sword2.position.distance_to(clicks[1]) <= 10 && swordSolved == false:
+			elif sword1.position.distance_to(clicks[0]) <= 20 && sword2.position.distance_to(clicks[1]) <= 20 && swordSolved == false:
 				%swordWire.add_point(clicks[0])
 				%swordWire.add_point(clicks[1])
 				swordSolved = true
 				print("Connected")
-			elif sword2.position.distance_to(clicks[0]) <= 10 && sword1.position.distance_to(clicks[1]) <= 10 && swordSolved == false:
+			elif sword2.position.distance_to(clicks[0]) <= 20 && sword1.position.distance_to(clicks[1]) <= 20 && swordSolved == false:
 				%swordWire.add_point(clicks[0])
 				%swordWire.add_point(clicks[1])
 				swordSolved = true
 				print("Connected Reverse")
-			elif cannon1.position.distance_to(clicks[0]) <= 10 && cannon2.position.distance_to(clicks[1]) <= 10 && cannonSolved == false:
+			elif cannon1.position.distance_to(clicks[0]) <= 20 && cannon2.position.distance_to(clicks[1]) <= 20 && cannonSolved == false:
 				%cannonWire.add_point(clicks[0])
 				%cannonWire.add_point(clicks[1])
 				cannonSolved = true
 				print("Connected")
-			elif cannon2.position.distance_to(clicks[0]) <= 10 && cannon1.position.distance_to(clicks[1]) <= 10 && cannonSolved == false:
+			elif cannon2.position.distance_to(clicks[0]) <= 20 && cannon1.position.distance_to(clicks[1]) <= 20 && cannonSolved == false:
 				%cannonWire.add_point(clicks[0])
 				%cannonWire.add_point(clicks[1])
 				cannonSolved = true
 				print("Connected Reverse")
-	
-	if starSolved && swordSolved && cannonSolved:
-		GlobalSignals.wireGameCompleted.emit(true)
-		GlobalSignals.inMiniGame.emit(false)
-		parent.solved = true
-		rootNode.queue_free()
 
+func _on_button_pressed():
+		if starSolved && swordSolved && cannonSolved:
+			GlobalSignals.wireGameCompleted.emit(true)
+			GlobalSignals.inMiniGame.emit(false)
+			parent.solved = true
+			rootNode.queue_free()
 
 func _on_wire_mini_game_popup_hide() -> void:
 	clicks = []

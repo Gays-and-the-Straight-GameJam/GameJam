@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddcvd07wftrdk"]
 
-[ext_resource type="Texture2D" uid="uid://dogsvwg06rxpi" path="res://Assets/Props/Power_station_no_battery.png" id="1_tvyp4"]
+[ext_resource type="Texture2D" uid="uid://cpyeqdop5fotf" path="res://Assets/Props/Battery_Unfilled.png" id="1_3miax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciyld"]
 size = Vector2(25.8333, 17)
@@ -8,10 +8,10 @@ size = Vector2(25.8333, 17)
 [node name="BatterySlotEmpty" type="Sprite2D"]
 top_level = true
 scale = Vector2(3, 3)
-texture = ExtResource("1_tvyp4")
+texture = ExtResource("1_3miax")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.25, 7.16667)
+position = Vector2(0.666667, 2)
 shape = SubResource("RectangleShape2D_ciyld")

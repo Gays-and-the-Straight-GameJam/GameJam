@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://duib4yoe1r4kq"]
+[gd_scene load_steps=5 format=3 uid="uid://cfewjuuj1pe8j"]
 
 [ext_resource type="Script" path="res://Levels/Props/control_panel.gd" id="1_se1j1"]
 [ext_resource type="Texture2D" uid="uid://d2u6bfmfvotqq" path="res://Assets/Props/Sorting_Minigame_starter.png" id="2_v733n"]
@@ -10,6 +10,7 @@ size = Vector2(10, 3.5)
 size = Vector2(15, 22)
 
 [node name="ControlPanel" type="CharacterBody2D" groups=["Interactables"]]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_se1j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
