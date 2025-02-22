@@ -24,6 +24,7 @@ var current_state = FollowerState.IDLE
 signal enemy_attacked
 
 func _physics_process(delta):
+	
 	var player = get_parent().get_node("Player")
 	if mov_direction == Vector2.ZERO:
 		animTree.get("parameters/playback").travel("Idle")
@@ -32,23 +33,24 @@ func _physics_process(delta):
 		animTree.get("parameters/playback").travel("Move")
 	animTree.set("parameters/Idle/BlendSpace2D/blend_position", mov_direction)
 	animTree.set("parameters/Move/BlendSpace2D/blend_position", mov_direction)
-
-	match current_state:
-		FollowerState.IDLE:
-			if isfollowing:
-				if checkplayerdistance(player):
-					animTree.get("parameters/playback").travel("Idle")
+	
+	if GlobalScript.inCutscene == false:
+		match current_state:
+			FollowerState.IDLE:
+				if isfollowing:
+					if checkplayerdistance(player):
+						animTree.get("parameters/playback").travel("Idle")
+					else:
+						current_state = FollowerState.FOLLOW
 				else:
-					current_state = FollowerState.FOLLOW
-			else:
-				animTree.get("parameters/playback").travel("Idle")
-		FollowerState.FOLLOW:
-			if !checkplayerdistance(player):
-				accelerate_towards_point(player, delta)
-				move_and_slide()
-				animTree.get("parameters/playback").travel("Move")
-			else:
-				current_state = FollowerState.IDLE
+					animTree.get("parameters/playback").travel("Idle")
+			FollowerState.FOLLOW:
+				if !checkplayerdistance(player):
+					accelerate_towards_point(player, delta)
+					move_and_slide()
+					animTree.get("parameters/playback").travel("Move")
+				else:
+					current_state = FollowerState.IDLE
 
 func checkplayerdistance(player):
 	var distance_squared = (player.position.x - global_position.x)**2 + (player.position.y - global_position.y)**2

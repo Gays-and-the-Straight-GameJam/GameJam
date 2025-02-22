@@ -71,4 +71,24 @@ width = 8.0
 unique_name_in_owner = true
 width = 8.0
 
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Connect the same symbols with wires
+(Click the matching symbols)"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Finish
+"
+
 [connection signal="popup_hide" from="." to="SubViewportContainer" method="_on_wire_mini_game_popup_hide"]

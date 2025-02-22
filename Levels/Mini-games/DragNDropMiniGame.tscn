@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfu1moc77tdcu"]
+[gd_scene load_steps=3 format=3 uid="uid://c6vbhga8alsqc"]
 
 [ext_resource type="Script" path="res://Levels/Mini-games/DragNDropMinigame.gd" id="1_fr6qg"]
 [ext_resource type="Texture2D" uid="uid://elnli3xe33ia" path="res://Assets/Props/Tiny_Shelf.png" id="2_dwxs4"]
@@ -6,7 +6,7 @@
 [node name="DragNDropMiniGame" type="Popup"]
 disable_3d = true
 initial_position = 1
-size = Vector2i(400, 450)
+size = Vector2i(400, 470)
 visible = true
 borderless = false
 always_on_top = true
@@ -35,6 +35,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_dwxs4")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Drag the containers to the correct spots."
+horizontal_alignment = 1
 
 [node name="point1" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true

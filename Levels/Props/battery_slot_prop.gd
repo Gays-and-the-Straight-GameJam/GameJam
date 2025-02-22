@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if solved == true:
-		self.sprite.texture = load("res://Assets/Props/Power_station_battery.png")
+		self.sprite.texture = load("res://Assets/Props/Battery_Filled.png")
 	pass
 	
 func _on_interact(state : bool, objectId : int):
