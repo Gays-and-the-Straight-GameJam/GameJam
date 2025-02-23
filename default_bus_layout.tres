@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://dvy2n38ctnus8"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://18dw47dptve5"]
 
 [sub_resource type="AudioEffectBandLimitFilter" id="AudioEffectBandLimitFilter_o7nyo"]
 resource_name = "BandLimitFilter"
@@ -7,7 +7,7 @@ resource_name = "BandLimitFilter"
 bus/0/effect/0/effect = SubResource("AudioEffectBandLimitFilter_o7nyo")
 bus/0/effect/0/enabled = false
 bus/1/name = &"Music"
-bus/1/solo = false
+bus/1/solo = true
 bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
