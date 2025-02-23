@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Signals="*res://Globals/GlobalSignals.gd"
-GlobalScript="*res://Globals/GlobalScript.gd"
-GlobalSignals="*res://Globals/GlobalSignals.gd"
 Save="*res://Globals/save.gd"
+GlobalScript="*res://Globals/GlobalScript.gd"
 MusicManager="*res://Globals/MusicManager.gd"
+GlobalSignals="*res://Globals/GlobalSignals.gd"
+Signals="*res://Globals/GlobalSignals.gd"
 
 [display]
 
