@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 			0:
 				numPuzzlesLeft = 0
 			1: 
+				MusicManager.play_music()
 				numPuzzlesLeft = numPuzzlesPerLevel[0]
 				levelStarted = true
 			2:
@@ -42,6 +43,7 @@ func _physics_process(delta: float) -> void:
 				levelStarted = true
 				load_next_level()
 			3: 
+				MusicManager.play_music()
 				numPuzzlesLeft = numPuzzlesPerLevel[2]
 				levelStarted = true
 			4:
@@ -51,6 +53,7 @@ func _physics_process(delta: float) -> void:
 				levelStarted = true
 				load_next_level()
 			5: 
+				MusicManager.play_music()
 				numPuzzlesLeft = numPuzzlesPerLevel[4]
 				levelStarted = true
 				
