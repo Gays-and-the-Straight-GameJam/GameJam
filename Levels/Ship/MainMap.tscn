@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://7lj0iianvasv"]
+[gd_scene load_steps=61 format=4 uid="uid://dt1o1ykyv4j7m"]
 
 [ext_resource type="Script" path="res://Levels/Ship/Map_logic.gd" id="1_cdvu1"]
 [ext_resource type="Texture2D" uid="uid://dp7p2xn1f6ch2" path="res://Assets/Ship/WholeShip.png" id="1_uktc8"]
@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://c8e64nrrixv3k" path="res://Characters/Captain/Captain.tscn" id="4_i8j3f"]
 [ext_resource type="PackedScene" uid="uid://d1n8s1abylrua" path="res://Characters/Npcs/Npc_orange.tscn" id="4_qcatl"]
 [ext_resource type="PackedScene" uid="uid://cs2iv3fx87wf8" path="res://Characters/Npcs/Npc_red.tscn" id="5_jcdee"]
-[ext_resource type="PackedScene" uid="uid://co1vjgd1d4v0q" path="res://Levels/Props/screen_1.tscn" id="9_phslk"]
-[ext_resource type="PackedScene" uid="uid://j3m8ws6rw81v" path="res://Levels/Props/screen_2.tscn" id="10_gbfp8"]
-[ext_resource type="PackedScene" uid="uid://blvukxmjuhtjv" path="res://Levels/Props/screen_3.tscn" id="11_qqbms"]
-[ext_resource type="PackedScene" path="res://Levels/Props/consoleDown.tscn" id="12_yo8an"]
-[ext_resource type="PackedScene" path="res://Levels/Props/consoleCorner.tscn" id="13_g7325"]
-[ext_resource type="PackedScene" path="res://Levels/Props/shelves.tscn" id="14_sjjgm"]
-[ext_resource type="PackedScene" path="res://Levels/Props/shelvesThick.tscn" id="15_wljyb"]
-[ext_resource type="PackedScene" path="res://Levels/Props/counterTops.tscn" id="16_xbejl"]
+[ext_resource type="PackedScene" uid="uid://dofvow5oxdmsw" path="res://Levels/Props/screen_1.tscn" id="9_phslk"]
+[ext_resource type="PackedScene" uid="uid://dlero5vxqquxt" path="res://Levels/Props/screen_2.tscn" id="10_gbfp8"]
+[ext_resource type="PackedScene" uid="uid://dwdbxlow37coa" path="res://Levels/Props/screen_3.tscn" id="11_qqbms"]
+[ext_resource type="PackedScene" uid="uid://cfaoafcdt5ywk" path="res://Levels/Props/consoleDown.tscn" id="12_yo8an"]
+[ext_resource type="PackedScene" uid="uid://bjnj3mplxgk4r" path="res://Levels/Props/consoleCorner.tscn" id="13_g7325"]
+[ext_resource type="PackedScene" uid="uid://fmcdys80myei" path="res://Levels/Props/shelves.tscn" id="14_sjjgm"]
+[ext_resource type="PackedScene" uid="uid://dx6c3ckg05qr0" path="res://Levels/Props/shelvesThick.tscn" id="15_wljyb"]
+[ext_resource type="PackedScene" uid="uid://dcrobd1tmrkgg" path="res://Levels/Props/counterTops.tscn" id="16_xbejl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0obu"]
 texture = ExtResource("2_qaaux")
@@ -189,7 +189,7 @@ position = Vector2(1120, 439)
 scale = Vector2(1.5, 1.5)
 
 [node name="screenNodeOne" type="Node2D" parent="."]
-position = Vector2(551, 26)
+position = Vector2(549, 26)
 scale = Vector2(1.5, 1.5)
 
 [node name="screenNodeTwo" type="Node2D" parent="."]
@@ -295,7 +295,7 @@ position = Vector2(783, 446)
 position = Vector2(879, 446)
 
 [node name="Screen7" parent="." instance=ExtResource("11_qqbms")]
-position = Vector2(599, 26)
+position = Vector2(600, 26)
 
 [node name="Screen8" parent="." instance=ExtResource("11_qqbms")]
 position = Vector2(694, 26)
@@ -609,7 +609,7 @@ position = Vector2(358, 361)
 position = Vector2(690, 50)
 
 [node name="Npc_orange14" parent="." instance=ExtResource("4_qcatl")]
-position = Vector2(604, 42)
+position = Vector2(604, 61)
 
 [node name="Npc_orange15" parent="." instance=ExtResource("4_qcatl")]
 position = Vector2(1048, 333)
@@ -619,3 +619,14 @@ position = Vector2(999, 332)
 
 [node name="Npc_red8" parent="." instance=ExtResource("5_jcdee")]
 position = Vector2(1436, 73)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2124.0
+offset_top = 259.0
+offset_right = 2297.0
+offset_bottom = 445.0
+text = "TaskList: 
+Broken Screens
+Fuse Boxes
+Repairing Batteries
+Storage panels"
