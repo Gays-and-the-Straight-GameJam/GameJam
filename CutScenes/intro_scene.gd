@@ -5,11 +5,14 @@ extends Node2D
 @onready var intern = $Intern
 
 func _ready() -> void:
-	animation_player.play("introScene")
+	if GlobalScript.level == 0:
+		animation_player.play("introScene")
+	elif GlobalScript.level == 2:
+		animation_player.play("level2")
+	elif GlobalScript.level == 4:
+		animation_player.play("level3")
 	pass
 	
 func _scene_finished():
-	get_tree().change_scene_to_file(map)
 	GlobalScript.introComplete = true
 	GlobalScript.inCutscene = false
-	intern.queue_free()

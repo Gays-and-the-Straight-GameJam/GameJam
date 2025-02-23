@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://fmcdys80myei"]
+
+[ext_resource type="Texture2D" uid="uid://de744301sqba2" path="res://Assets/Ship/FilingThin.png" id="1_y5dhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbne1"]
+size = Vector2(41, 15)
+
+[node name="Shelves" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_y5dhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_lbne1")

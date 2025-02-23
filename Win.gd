@@ -2,9 +2,9 @@ extends Control
 
 
 
-@onready var main_menu = $VBoxContainer/Main_menu as Button
+@onready var main_menu = $VBoxContainer/Main_menu
 @export var main_menu_scene: String = "res://Levels/Menus/main_menu.tscn"
-@onready var exit_btn = $VBoxContainer/Exit_btn as Button
+@onready var exit_btn = $VBoxContainer/Exit_btn
 
 
 func _ready() -> void:

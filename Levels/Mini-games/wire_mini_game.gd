@@ -2,6 +2,7 @@ extends SubViewportContainer
 
 @onready var wireMiniGame = get_node(".")
 @onready var parent = self.wireMiniGame.get_parent().get_parent()
+@onready var parentSprite = parent.get_child(0)
 @onready var star1 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/star.tscn").instantiate()
 @onready var star2 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/star.tscn").instantiate()
 @onready var sword1 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/sword.tscn").instantiate()
@@ -9,6 +10,7 @@ extends SubViewportContainer
 @onready var cannon1 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/cannon.tscn").instantiate()
 @onready var cannon2 = preload("res://Levels/Mini-games/Mini-game-mini-scenes/cannon.tscn").instantiate()
 @onready var button = $SubViewport/Button
+@onready var complete = load("res://Assets/Props/Fusebox_complete.png")
 
 @onready var left = [Vector2(50,100),Vector2(50,200),Vector2(50,300)]
 @onready var right = [Vector2(350,100),Vector2(350,200),Vector2(350,300)]
@@ -99,6 +101,7 @@ func _on_button_pressed():
 			GlobalSignals.wireGameCompleted.emit(true)
 			GlobalSignals.inMiniGame.emit(false)
 			parent.solved = true
+			parentSprite.texture = complete
 			rootNode.queue_free()
 
 func _on_wire_mini_game_popup_hide() -> void:

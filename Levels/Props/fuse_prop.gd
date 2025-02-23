@@ -22,8 +22,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	pass
 	
-	
-	
 func _on_interact(state : bool, objectId : int):
 	if state == true and objectId == self.objectID and self.solved == false:
 		print("Interacted with: " + str(self.objectID))

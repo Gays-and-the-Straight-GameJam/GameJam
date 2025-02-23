@@ -8,6 +8,7 @@ extends Node2D
 @onready var intern = preload("res://Characters/Intern/Intern.tscn")
 
 @onready var batterySlotfull = preload("res://Levels/Mini-games/Mini-game-mini-scenes/batterySlotFull.tscn")
+@onready var root = $"."
 
 @onready var nodeList = [
 	$fuseNodeOne,$fuseNodeTwo,$fuseNodeThree,$screenNodeOne,$screenNodeTwo,$screenNodeThree,
@@ -21,10 +22,13 @@ extends Node2D
 
 @onready var currentPuzzles = []
 
-func _ready() -> void:
-	$InternSpawnPoint.add_child(intern.instantiate())
-	_spawnnodes()
 
+func _ready() -> void:
+	if GlobalScript.inCutscene == false:
+		var internInstance = intern.instantiate()
+		root.add_child(internInstance)
+		internInstance.position = $InternSpawnPoint.position
+	_spawnnodes()
 
 func _spawnnodes():
 	
@@ -36,8 +40,6 @@ func _spawnnodes():
 	for node in nodeList:
 		if "batterySlot" in node.name:
 			node.add_child(batterySlotfull.instantiate())
-	
-	
 	
 	for node in currentPuzzles:
 		if "fuse" in node.name:

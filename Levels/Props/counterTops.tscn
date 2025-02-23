@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcrobd1tmrkgg"]
+
+[ext_resource type="Texture2D" uid="uid://2tnuly7p4oa7" path="res://Assets/Ship/ScienceCounter.png" id="1_sly55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxr3f"]
+size = Vector2(42.6667, 5.33333)
+
+[node name="CounterTops" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sly55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.17891e-07, -2.66667)
+shape = SubResource("RectangleShape2D_fxr3f")
