@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx6c3ckg05qr0"]
+
+[ext_resource type="Texture2D" uid="uid://bpbwn61rh08kc" path="res://Assets/Ship/FilingThick.png" id="1_u158x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi585"]
+size = Vector2(75, 15)
+
+[node name="ShelvesThick" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_u158x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, -2.5)
+shape = SubResource("RectangleShape2D_xi585")

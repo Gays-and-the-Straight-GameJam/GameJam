@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blvukxmjuhtjv"]
+[gd_scene load_steps=10 format=3 uid="uid://dwdbxlow37coa"]
 
 [ext_resource type="Texture2D" uid="uid://bjd7wb48ylkmj" path="res://Assets/Ship/Screen3.png" id="1_nccqo"]
 
@@ -60,5 +60,6 @@ animations = [{
 }]
 
 [node name="Screen3" type="AnimatedSprite2D"]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_nk5dd")
 frame_progress = 0.492441

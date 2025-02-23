@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://18dw47dptve5"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://dvy2n38ctnus8"]
 
 [sub_resource type="AudioEffectBandLimitFilter" id="AudioEffectBandLimitFilter_o7nyo"]
 resource_name = "BandLimitFilter"

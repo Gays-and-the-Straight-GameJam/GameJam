@@ -22,7 +22,7 @@ func _ready():
 
 func _physics_process(delta):
 	if GlobalScript.inCutscene == false:
-		var player = get_parent().get_node_or_null("Player")
+		var player = get_tree().get_first_node_in_group("Player")
 		if player == null:
 			return
 		if mov_direction == Vector2.ZERO:

@@ -10,12 +10,15 @@ extends CharacterBody2D
 @onready var level_timer: Timer = $"Level Timer"
 @onready var timer_label: Label = $CanvasLayer/TimerLabel
 
-var current_level: int = 1
+var current_level: int = 0
 
 var level_time_limits = {
+	0: 20,
 	1: 60,
-	2: 180,
-	3: 360
+	2: 20,
+	3: 180,
+	4: 20,
+	5: 360
 }
 
 enum  {Move}
@@ -46,7 +49,7 @@ func _physics_process(delta: float) -> void:
 
 func move_state():
 	
-	if inMiniGame == false:
+	if inMiniGame == false and GlobalScript.inCutscene == false:
 		var input_direction = Input.get_vector("move_left","move_right","move_up","move_down")
 		self.velocity = input_direction * speed
 		if input_direction == Vector2.ZERO:
@@ -81,7 +84,7 @@ func format_time(seconds: float) -> String:
 
 func start_level_timer():
 	if current_level in level_time_limits:
-		level_timer.wait_time = level_time_limits[current_level]
+		level_timer.wait_time = level_time_limits[GlobalScript.level]
 		level_timer.start()
 
 func _on_level_timer_timeout():
@@ -89,10 +92,11 @@ func _on_level_timer_timeout():
 	print("Time is up! Loading Game Over screen...")
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Levels/Menus/OOT.tscn")
+
 	
 func update_timer_for_level():
 	if level_timer:
 		level_timer.stop()
 		level_timer.wait_time = GlobalScript.get_time_for_level()
 		level_timer.start()
-		print("Timer set to:", level_timer.wait_time, "seconds for Level", GlobalScript.level)
+		print("Timer set to:", level_timer.wait_time, "seconds for Level ", GlobalScript.level)

@@ -2,6 +2,7 @@ extends SubViewportContainer
 
 @onready var DragNDropminigame = get_node(".")
 @onready var parent = self.DragNDropminigame.get_parent().get_parent()
+@onready var parentSprite = parent.get_child(0)
 @onready var Box = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/drag_box.tscn").instantiate()
 @onready var Disk = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/drag_disk.tscn").instantiate()
 @onready var Rose = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/drag_rose.tscn").instantiate()
@@ -12,11 +13,12 @@ extends SubViewportContainer
 @onready var DropBox = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropBox.tscn").instantiate()
 @onready var DropDisk = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropDisk.tscn").instantiate()
 @onready var DropRose = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropRose.tscn").instantiate()
-@onready var DropStar = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabNDropStar.tscn").instantiate()
+@onready var DropStar = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropStar.tscn").instantiate()
 @onready var DropCactus = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropCactus.tscn").instantiate()
 @onready var DropEye = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropEye.tscn").instantiate()
 @onready var DropCoins = preload("res://Levels/Mini-games/Mini-game-mini-scenes/DragNDrop/GrabnDropCoins.tscn").instantiate()
 @onready var viewport = %SubViewport
+@onready var complete = load("res://Assets/Props/Sorting_Minigame_starter_complete.png")
 
 @onready var top = [Vector2(120, 350),Vector2(160, 350),Vector2(200, 350),Vector2(240, 350),Vector2(280, 350),Vector2(320, 350), Vector2(80, 350)]
 @onready var bottom = [Vector2(142, 250),Vector2(145, 125),Vector2(237, 250),Vector2(235,125),Vector2(323, 250),Vector2(325, 125), Vector2(67, 125)]
@@ -148,6 +150,7 @@ func check_drop_zone(node):
 		GlobalSignals.DragNDropCompleted.emit(true)
 		GlobalSignals.inMiniGame.emit(false)
 		parent.solved = true
+		parentSprite.texture = complete
 		rootNode.queue_free()
 		
 func _on_drag_n_drop_mini_game_popup_hide() -> void:

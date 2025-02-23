@@ -1,7 +1,7 @@
 extends Control
 
 @export var bg_color : Color = Color.BLACK
-@export var to_scene : PackedScene = null
+@export var to_scene = "res://Levels/Menus/main_menu.tscn"
 @export var title_color := Color.BLUE_VIOLET
 @export var text_color := Color.WHITE
 @export var title_font : FontFile = null
@@ -98,11 +98,7 @@ func _process(delta):
 func finish():
 	if not finished:
 		finished = true
-		if to_scene != null:
-			var path = to_scene.get_path()
-			get_tree().change_scene_to_file(path)
-		else:
-			get_tree().quit()
+		get_tree().change_scene_to_file("res://Levels/Menus/main_menu.tscn")
 
 
 func add_line():

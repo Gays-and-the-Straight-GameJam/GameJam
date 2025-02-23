@@ -1,11 +1,29 @@
-[gd_scene load_steps=44 format=3 uid="uid://bieg82ys7e7id"]
+[gd_scene load_steps=61 format=4 uid="uid://dt1o1ykyv4j7m"]
 
+[ext_resource type="Script" path="res://Levels/Ship/Map_logic.gd" id="1_cdvu1"]
 [ext_resource type="Texture2D" uid="uid://dp7p2xn1f6ch2" path="res://Assets/Ship/WholeShip.png" id="1_uktc8"]
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_ifdeu"]
+[ext_resource type="Texture2D" uid="uid://cjvbscrqged4o" path="res://Assets/Ship/Background stars.jpg" id="2_qaaux"]
 [ext_resource type="PackedScene" uid="uid://e8o6tr4dhej0" path="res://Levels/Props/ShippingContainer.tscn" id="3_t681x"]
+[ext_resource type="PackedScene" uid="uid://c8e64nrrixv3k" path="res://Characters/Captain/Captain.tscn" id="4_i8j3f"]
 [ext_resource type="PackedScene" uid="uid://d1n8s1abylrua" path="res://Characters/Npcs/Npc_orange.tscn" id="4_qcatl"]
 [ext_resource type="PackedScene" uid="uid://cs2iv3fx87wf8" path="res://Characters/Npcs/Npc_red.tscn" id="5_jcdee"]
-[ext_resource type="PackedScene" uid="uid://b2ggnmps1xi8f" path="res://Characters/Intern/Intern.tscn" id="6_cbnp1"]
+[ext_resource type="PackedScene" uid="uid://dofvow5oxdmsw" path="res://Levels/Props/screen_1.tscn" id="9_phslk"]
+[ext_resource type="PackedScene" uid="uid://dlero5vxqquxt" path="res://Levels/Props/screen_2.tscn" id="10_gbfp8"]
+[ext_resource type="PackedScene" uid="uid://dwdbxlow37coa" path="res://Levels/Props/screen_3.tscn" id="11_qqbms"]
+[ext_resource type="PackedScene" uid="uid://cfaoafcdt5ywk" path="res://Levels/Props/consoleDown.tscn" id="12_yo8an"]
+[ext_resource type="PackedScene" uid="uid://bjnj3mplxgk4r" path="res://Levels/Props/consoleCorner.tscn" id="13_g7325"]
+[ext_resource type="PackedScene" uid="uid://fmcdys80myei" path="res://Levels/Props/shelves.tscn" id="14_sjjgm"]
+[ext_resource type="PackedScene" uid="uid://dx6c3ckg05qr0" path="res://Levels/Props/shelvesThick.tscn" id="15_wljyb"]
+[ext_resource type="PackedScene" uid="uid://dcrobd1tmrkgg" path="res://Levels/Props/counterTops.tscn" id="16_xbejl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0obu"]
+texture = ExtResource("2_qaaux")
+0:0/size_in_atlas = Vector2i(120, 67)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_d4lu0"]
+sources/1 = SubResource("TileSetAtlasSource_v0obu")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_c6r5k"]
 a = Vector2(1, -41)
@@ -123,18 +141,40 @@ size = Vector2(19, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av3h3"]
 size = Vector2(87, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmk7t"]
+size = Vector2(10.2336, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8dwn"]
+size = Vector2(10, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4iha"]
+size = Vector2(11.2041, 28.5638)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5frkp"]
+size = Vector2(12.4731, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ej8f"]
+size = Vector2(10.9999, 28.8788)
+
 [node name="MainMap" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(377, 241)
+script = ExtResource("1_cdvu1")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(-322, -186)
+tile_map_data = PackedByteArray("AAC//x0AAQAAAAAAAAA3AB0AAQAAAAAAAACvAB0AAQAAAAAAAACwANr/AQAAAAAAAAA4ANr/AQAAAAAAAADA/9r/AQAAAAAAAAA4AF8AAQAAAAAAACCwAGAAAQAAAAAAACDA/18AAQAAAAAAACA=")
+tile_set = SubResource("TileSet_d4lu0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+y_sort_enabled = true
 offset_left = -176.0
 offset_top = -406.0
 offset_right = 1744.0
 offset_bottom = 674.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_uktc8")
-expand_mode = 1
 
 [node name="fuseNodeOne" type="Node2D" parent="."]
 position = Vector2(647, 19)
@@ -184,6 +224,18 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(759, 620)
 scale = Vector2(1.5, 1.5)
 
+[node name="batteryNodeOne" type="Node2D" parent="."]
+position = Vector2(1562, 457)
+
+[node name="batteryNodeTwo" type="Node2D" parent="."]
+position = Vector2(1175.44, 79.8484)
+
+[node name="batteryNodeThree" type="Node2D" parent="."]
+position = Vector2(493, 98)
+
+[node name="batteryNodeFour" type="Node2D" parent="."]
+position = Vector2(241.146, 564.437)
+
 [node name="ShippingContainer" parent="." instance=ExtResource("3_t681x")]
 y_sort_enabled = true
 position = Vector2(484, 276)
@@ -224,11 +276,48 @@ position = Vector2(336, 468)
 y_sort_enabled = true
 position = Vector2(189, 468)
 
-[node name="ShippingContainers" type="Node" parent="."]
+[node name="Screen1" parent="." instance=ExtResource("9_phslk")]
+position = Vector2(939, 446)
 
-[node name="Player" parent="." instance=ExtResource("2_ifdeu")]
+[node name="Screen2" parent="." instance=ExtResource("9_phslk")]
+position = Vector2(1185, 493)
+
+[node name="Screen3" parent="." instance=ExtResource("9_phslk")]
+position = Vector2(1461, 493)
+
+[node name="Screen4" parent="." instance=ExtResource("10_gbfp8")]
+position = Vector2(1401, 493)
+
+[node name="Screen5" parent="." instance=ExtResource("10_gbfp8")]
+position = Vector2(783, 446)
+
+[node name="Screen6" parent="." instance=ExtResource("10_gbfp8")]
+position = Vector2(879, 446)
+
+[node name="Screen7" parent="." instance=ExtResource("11_qqbms")]
+position = Vector2(599, 26)
+
+[node name="Screen8" parent="." instance=ExtResource("11_qqbms")]
+position = Vector2(694, 26)
+
+[node name="Screen9" parent="." instance=ExtResource("11_qqbms")]
+position = Vector2(1659, 206)
+
+[node name="ConsoleDown" parent="." instance=ExtResource("12_yo8an")]
 y_sort_enabled = true
-position = Vector2(714, 361)
+position = Vector2(1636, 289)
+
+[node name="ConsoleDown2" parent="." instance=ExtResource("12_yo8an")]
+y_sort_enabled = true
+position = Vector2(1732, 289)
+
+[node name="ConsoleDown3" parent="." instance=ExtResource("12_yo8an")]
+y_sort_enabled = true
+position = Vector2(1828, 289)
+
+[node name="ConsoleDown4" parent="." instance=ExtResource("12_yo8an")]
+y_sort_enabled = true
+position = Vector2(1924, 289)
 
 [node name="borders" type="CharacterBody2D" parent="."]
 
@@ -382,13 +471,151 @@ shape = SubResource("RectangleShape2D_kc7xx")
 position = Vector2(1277.5, 113)
 shape = SubResource("RectangleShape2D_av3h3")
 
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="borders"]
+position = Vector2(2045.88, 375.5)
+shape = SubResource("RectangleShape2D_lmk7t")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="borders"]
+position = Vector2(1949, 451)
+shape = SubResource("RectangleShape2D_r8dwn")
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="borders"]
+position = Vector2(1829.6, 450.282)
+shape = SubResource("RectangleShape2D_w4iha")
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="borders"]
+position = Vector2(1734.24, 450)
+shape = SubResource("RectangleShape2D_5frkp")
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="borders"]
+position = Vector2(1637.5, 450.439)
+shape = SubResource("RectangleShape2D_8ej8f")
+
 [node name="Npc_orange" parent="." instance=ExtResource("4_qcatl")]
-position = Vector2(653, 231)
+position = Vector2(500, 602)
 
 [node name="Npc_red" parent="." instance=ExtResource("5_jcdee")]
-position = Vector2(696, 207)
+position = Vector2(454, 576)
 
-[node name="Intern" parent="." instance=ExtResource("6_cbnp1")]
-y_sort_enabled = true
-position = Vector2(611, 309)
+[node name="InternSpawnPoint" type="Node2D" parent="."]
+position = Vector2(1880, 351)
 scale = Vector2(1.25, 1.25)
+
+[node name="Captain" parent="." instance=ExtResource("4_i8j3f")]
+position = Vector2(1942, 345)
+
+[node name="ConsoleCorner" parent="." instance=ExtResource("13_g7325")]
+position = Vector2(2019, 307)
+
+[node name="Shelves" parent="." instance=ExtResource("14_sjjgm")]
+y_sort_enabled = true
+position = Vector2(1322, 629)
+
+[node name="Player" parent="." instance=ExtResource("2_ifdeu")]
+y_sort_enabled = true
+position = Vector2(1942, 386)
+
+[node name="ShelvesThick" parent="." instance=ExtResource("15_wljyb")]
+position = Vector2(1192, 628)
+
+[node name="ShelvesThick2" parent="." instance=ExtResource("15_wljyb")]
+position = Vector2(1458, 629)
+
+[node name="CounterTops" parent="." instance=ExtResource("16_xbejl")]
+position = Vector2(844, 218)
+
+[node name="CounterTops2" parent="." instance=ExtResource("16_xbejl")]
+position = Vector2(1036, 218)
+
+[node name="CounterTops3" parent="." instance=ExtResource("16_xbejl")]
+position = Vector2(844, 121)
+
+[node name="CounterTops4" parent="." instance=ExtResource("16_xbejl")]
+position = Vector2(1036, 122)
+
+[node name="Npc_orange2" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1050, 184)
+
+[node name="Npc_orange3" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(857, 127)
+
+[node name="Npc_red2" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1013, 184)
+
+[node name="Npc_red3" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(823, 127)
+
+[node name="Npc_orange4" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(888, 506)
+
+[node name="Npc_red4" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(845, 503)
+
+[node name="Npc_red5" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1112, 707)
+
+[node name="Npc_orange5" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(780, 710)
+
+[node name="Npc_red6" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1253, 152)
+
+[node name="Npc_orange6" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1297, 151)
+
+[node name="Npc_red7" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1254, 68)
+
+[node name="Npc_orange7" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1296, 69)
+
+[node name="Npc_orange8" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1335, 109)
+
+[node name="Npc_orange9" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1634, 311)
+
+[node name="Npc_orange10" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1730, 311)
+
+[node name="Npc_red9" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1999, 325)
+
+[node name="Npc_orange11" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1425, 288)
+
+[node name="Npc_red10" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1452, 289)
+
+[node name="Npc_red11" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1409, 542)
+
+[node name="Npc_orange12" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1442, 548)
+
+[node name="Npc_red14" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1169, 647)
+
+[node name="Npc_red15" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(316, 340)
+
+[node name="Npc_red16" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(310, 370)
+
+[node name="Npc_orange13" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(358, 361)
+
+[node name="Npc_red17" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(690, 50)
+
+[node name="Npc_orange14" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(604, 42)
+
+[node name="Npc_orange15" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1048, 333)
+
+[node name="Npc_red18" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(999, 332)
+
+[node name="Npc_red8" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1436, 73)
