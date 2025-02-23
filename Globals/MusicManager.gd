@@ -12,6 +12,7 @@ func _ready():
 	play_music()
  
 
+
 func play_music():
 	var current_scene = get_tree().current_scene.scene_file_path
 	
@@ -21,7 +22,7 @@ func play_music():
 		music_player.stream = preload("res://Assets/Music/Win_Song.mp3")
 	elif current_scene == "res://Levels/Menus/OOT.tscn":
 		play_sfx(preload("res://Assets/Music/Explosion.mp3"))
-	elif current_scene == "res://Levels/Map.tscn":
+	elif current_scene == "res://Levels/Ship/MainMap.tscn":
 		music_player.stream = preload("res://Assets/Music/play_music.mp3")
 	
 	if current_scene in non_looping_scene:
@@ -32,15 +33,7 @@ func play_music():
 	
 	music_player.volume_db = -10
 	music_player.play()
-
-
-func _on_music_finished():
-	music_player.play()
 	
-func stop_music():
-	if music_player:
-		music_player.stop()
-		
 func play_sfx(sound: AudioStream):
 	var sfx_player = AudioStreamPlayer.new()
 	sfx_player.bus = "Sfx"
@@ -49,3 +42,11 @@ func play_sfx(sound: AudioStream):
 	sfx_player.play()
 
 	sfx_player.connect("finished", sfx_player.queue_free)
+	
+
+func _on_music_finished():
+	music_player.play()
+	
+func stop_music():
+	if music_player:
+		music_player.stop()
