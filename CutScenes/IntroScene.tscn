@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://sbm2r24eh1eh" path="res://Levels/Ship/OririMain.tscn" id="1_g6ly7"]
 [ext_resource type="Script" path="res://CutScenes/intro_scene.gd" id="1_obfxd"]
-[ext_resource type="PackedScene" uid="uid://qajrn5gqgvvs" path="res://Characters/Intern/Intern.tscn" id="2_2o4bu"]
+[ext_resource type="PackedScene" uid="uid://b2ggnmps1xi8f" path="res://Characters/Intern/Intern.tscn" id="2_2o4bu"]
 [ext_resource type="PackedScene" uid="uid://rsiho7r5by1s" path="res://Characters/Player/Player.tscn" id="2_5gtu7"]
 [ext_resource type="AudioStream" uid="uid://kfg2h68lqf3o" path="res://Assets/Audio/mixkit-battleship-alarm-1001.wav" id="3_2vtq8"]
 [ext_resource type="PackedScene" uid="uid://c8e64nrrixv3k" path="res://Characters/Captain/Captain.tscn" id="3_bbhat"]
