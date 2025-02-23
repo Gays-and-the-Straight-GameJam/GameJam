@@ -15,13 +15,17 @@ run/main_scene="res://Levels/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/default_playback_type.web=0
+
 [autoload]
 
-Save="*res://Globals/save.gd"
-GlobalScript="*res://Globals/GlobalScript.gd"
-MusicManager="*res://Globals/MusicManager.gd"
-GlobalSignals="*res://Globals/GlobalSignals.gd"
 Signals="*res://Globals/GlobalSignals.gd"
+GlobalScript="*res://Globals/GlobalScript.gd"
+GlobalSignals="*res://Globals/GlobalSignals.gd"
+Save="*res://Globals/save.gd"
+MusicManager="*res://Globals/MusicManager.gd"
 
 [display]
 
