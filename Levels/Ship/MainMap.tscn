@@ -532,3 +532,90 @@ position = Vector2(844, 121)
 
 [node name="CounterTops4" parent="." instance=ExtResource("16_xbejl")]
 position = Vector2(1036, 122)
+
+[node name="Npc_orange2" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1050, 184)
+
+[node name="Npc_orange3" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(857, 127)
+
+[node name="Npc_red2" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1013, 184)
+
+[node name="Npc_red3" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(823, 127)
+
+[node name="Npc_orange4" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(888, 506)
+
+[node name="Npc_red4" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(845, 503)
+
+[node name="Npc_red5" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1112, 707)
+
+[node name="Npc_orange5" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(780, 710)
+
+[node name="Npc_red6" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1253, 152)
+
+[node name="Npc_orange6" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1297, 151)
+
+[node name="Npc_red7" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1254, 68)
+
+[node name="Npc_orange7" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1296, 69)
+
+[node name="Npc_orange8" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1335, 109)
+
+[node name="Npc_orange9" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1634, 311)
+
+[node name="Npc_orange10" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1730, 311)
+
+[node name="Npc_red9" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1999, 325)
+
+[node name="Npc_orange11" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1425, 288)
+
+[node name="Npc_red10" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1452, 289)
+
+[node name="Npc_red11" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1409, 542)
+
+[node name="Npc_orange12" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1442, 548)
+
+[node name="Npc_red14" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1169, 647)
+
+[node name="Npc_red15" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(316, 340)
+
+[node name="Npc_red16" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(310, 370)
+
+[node name="Npc_orange13" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(358, 361)
+
+[node name="Npc_red17" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(690, 50)
+
+[node name="Npc_orange14" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(604, 42)
+
+[node name="Npc_orange15" parent="." instance=ExtResource("4_qcatl")]
+position = Vector2(1048, 333)
+
+[node name="Npc_red18" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(999, 332)
+
+[node name="Npc_red8" parent="." instance=ExtResource("5_jcdee")]
+position = Vector2(1436, 73)
