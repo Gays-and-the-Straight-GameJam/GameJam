@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://75jjfgrayjo4"]
 
 [ext_resource type="Script" path="res://Win.gd" id="1_56yu0"]
-[ext_resource type="Texture2D" uid="uid://88p55wrmm4od" path="res://Assets/Props/Win.png" id="2_pakyj"]
+[ext_resource type="Texture2D" uid="uid://c0vknb4lahk26" path="res://Assets/Props/AnimatedBackground.tres" id="2_rjd77"]
 [ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_xdcwl"]
 
 [node name="Control" type="Control"]
@@ -17,7 +17,7 @@ script = ExtResource("1_56yu0")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_pakyj")
+texture = ExtResource("2_rjd77")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -47,6 +47,10 @@ theme_override_fonts/font = ExtResource("2_xdcwl")
 theme_override_font_sizes/font_size = 32
 text = "Exit Game"
 
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -62,3 +66,7 @@ theme_override_fonts/font = ExtResource("2_xdcwl")
 theme_override_font_sizes/font_size = 60
 text = "You've beaten all our current levels!
 Give yourself a pat on the back! YAY"
+
+[connection signal="pressed" from="VBoxContainer/Main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit_btn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
