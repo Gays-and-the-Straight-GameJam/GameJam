@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceq6ovar7iys6"]
 
 [ext_resource type="Script" path="res://Levels/Menus/OOT.gd" id="1_vngew"]
-[ext_resource type="Texture2D" uid="uid://c0vknb4lahk26" path="res://Assets/Props/AnimatedBackground.tres" id="2_ahysb"]
+[ext_resource type="Texture2D" path="res://Assets/Props/AnimatedBackground.tres" id="2_ahysb"]
 [ext_resource type="FontFile" uid="uid://b0yxefbdevtit" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_wlqru"]
 
 [node name="Death" type="Control"]

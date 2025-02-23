@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpkaj6h2hes4d"]
+[gd_scene load_steps=10 format=3 uid="uid://yqk4mhynop7e"]
 
 [ext_resource type="Script" path="res://CutScenes/intro_scene.gd" id="1_obfxd"]
-[ext_resource type="PackedScene" path="res://Characters/Intern/Intern.tscn" id="2_2o4bu"]
-[ext_resource type="PackedScene" uid="uid://7lj0iianvasv" path="res://Levels/Ship/MainMap.tscn" id="2_dbtt1"]
+[ext_resource type="PackedScene" uid="uid://qajrn5gqgvvs" path="res://Characters/Intern/Intern.tscn" id="2_2o4bu"]
+[ext_resource type="PackedScene" uid="uid://dt1o1ykyv4j7m" path="res://Levels/Ship/MainMap.tscn" id="2_dbtt1"]
 [ext_resource type="AudioStream" uid="uid://kfg2h68lqf3o" path="res://Assets/Audio/mixkit-battleship-alarm-1001.wav" id="3_2vtq8"]
 
 [sub_resource type="Animation" id="Animation_v2y12"]
@@ -385,6 +385,7 @@ position = Vector2(1929, 640)
 scale = Vector2(1.25, 1.25)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -3044.0
 offset_top = -77.0
 offset_right = 3892.0
@@ -405,4 +406,4 @@ offset_right = 2496.0
 offset_bottom = 918.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Press F to interact (default)"
+text = "Press F (default) to interact "

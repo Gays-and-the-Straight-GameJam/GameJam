@@ -10,6 +10,13 @@ extends Control
 
 
 func _ready() -> void:
+	GlobalScript.level = 0
+	GlobalScript.levelComplete = false
+	GlobalScript.introComplete = false
+	GlobalScript.levelStarted = false
+	GlobalScript.mainMenu = true
+	GlobalScript.gameWon = false
+	GlobalScript.inCutscene = true
 	main_menu.grab_focus()
 	get_node("/root/MusicManager").play_music()
 	main_menu.connect("pressed",_on_main_menu_pressed)
